@@ -1,0 +1,3 @@
+{"timestamp":"2030-01-15T14:02:11Z","request_id":"req-lab-001","severity":"WARNING","event":"AUTHORIZATION_DENIED","component":"api-gateway","message":"request rejected before protected operation"}
+{"timestamp":"2030-01-15T14:02:12Z","request_id":"req-lab-001","severity":"ERROR","event":"REQUEST_FAILED","component":"api","message":"request completed without protected operation"}
+{"timestamp":"2030-01-15T14:03:05Z","request_id":"req-lab-002","severity":"INFO","event":"HEALTH_OK","component":"api","message":"health check successful"}
