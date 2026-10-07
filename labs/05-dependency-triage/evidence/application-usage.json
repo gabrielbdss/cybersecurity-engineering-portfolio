@@ -1,0 +1,8 @@
+{
+  "application": "sample-api",
+  "dependency_path": ["sample-api", "example-framework", "example-http-lib"],
+  "package_present": true,
+  "affected_parser_direct_usage_found": false,
+  "runtime_reachability_test_performed": false,
+  "exploitation_evidence_present": false
+}
