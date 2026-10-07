@@ -1,0 +1,48 @@
+name: Portfolio CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-merge-gate-lab:
+    name: Validate merge-gate lab
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run regression tests
+        working-directory: labs/04-devsecops-merge-gate
+        run: python3 -m unittest -v test_gate.py
+
+      - name: Reproduce decision matrix
+        working-directory: labs/04-devsecops-merge-gate
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python3 gate.py evidence/positive.json
+          if python3 gate.py evidence/negative.json; then
+            echo "negative.json unexpectedly passed"
+            exit 1
+          fi
+
+          python3 gate.py evidence/not-applicable.json
+          if python3 gate.py evidence/unknown.json; then
+            echo "unknown.json unexpectedly passed"
+            exit 1
+          fi

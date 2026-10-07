@@ -6,11 +6,22 @@
 
 [English version](README.md)
 
-## Sobre este portfólio
+## Sobre
 
-Este portfólio demonstra como abordo problemas de engenharia de segurança: definição de escopo e autorização, coleta de evidências, separação entre fatos e hipóteses, validação segura, decisão baseada em risco e remediação com plano de rollback.
+Atuo como **Cybersecurity Engineer na FoundLab**, com foco em segurança cloud-native, resposta a incidentes, DevSecOps e AI Security.
 
-O conteúdo público é propositalmente sanitizado. Experiências profissionais podem orientar a metodologia, mas os exemplos publicados são sintéticos, laboratoriais ou suficientemente abstratos para não expor ambientes privados.
+Meu trabalho segue uma disciplina baseada em evidências: definir escopo e autorização, coletar telemetria, separar fatos de hipóteses, validar com segurança, propor controles proporcionais e verificar a remediação.
+
+**Limite de afiliação profissional:** a FoundLab é citada neste repositório apenas como contexto profissional. Nenhum case, lab, arquitetura, incidente, finding, ticket, cliente, código-fonte, telemetria, identificador ou controle publicado aqui representa ou reproduz projeto privado ou ambiente de produção da empresa.
+
+## Visão rápida do portfólio
+
+| Evidência pública | Repositório atual |
+|---|---:|
+| Case studies de engenharia de segurança | **6** |
+| Labs sintéticos hands-on | **5** |
+| Avaliador de segurança executável localmente | **1** |
+| Testes de regressão do merge gate | **4** |
 
 ## Áreas demonstradas
 
@@ -50,18 +61,19 @@ O conteúdo público é propositalmente sanitizado. Experiências profissionais 
 - [Lab 04 — Deterministic DevSecOps Merge Gate](labs/04-devsecops-merge-gate/README.md)
 - [Lab 05 — Dependency Finding Reconciliation](labs/05-dependency-triage/README.md)
 
-## Como ler
+## Evidência reproduzível
 
-A versão principal permanece em inglês para maximizar a leitura internacional e preservar a terminologia técnica usada no setor. Esta página em português funciona como porta de entrada para recrutadores, gestores e profissionais brasileiros.
-
-Para navegação por domínio, consulte o [Portfolio Index](PORTFOLIO_INDEX.md).
+O [Lab 04](labs/04-devsecops-merge-gate/README.md) contém código executável, fixtures positivas e negativas e testes unitários. O workflow público do repositório executa automaticamente essa validação em pushes e pull requests.
 
 ## Confidencialidade
 
-Nenhum case público deve expor identidade privada de empresa/cliente, identificadores de produção, credenciais, logs operacionais reais, tickets internos, código proprietário, arquitetura privada ou vulnerabilidades não públicas.
+Experiências profissionais podem orientar a disciplina de engenharia apresentada aqui, mas os artefatos públicos são **sintéticos, controlados ou vendor-neutral**. Não publico projetos privados, identidade de clientes, arquitetura interna, tickets, logs reais, credenciais, código proprietário, identificadores operacionais ou findings não públicos.
 
 Consulte a política completa em [SECURITY.md](SECURITY.md).
 
----
+## Autor
 
-**Gabriel Barbosa · Cybersecurity Engineer**
+**Gabriel Barbosa · Cybersecurity Engineer**  
+**FoundLab**
+
+[GitHub](https://github.com/gabrielbdss) · [LinkedIn](https://www.linkedin.com/in/gabriel-b-souza-silva-255397316)
