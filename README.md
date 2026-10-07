@@ -4,7 +4,9 @@
 
 ### Cloud Security · Incident Response · DevSecOps · AI Security
 
-**Cloud-first security engineering with reproducible labs and evidence-backed decisions.**
+**Evidence-first security engineering with reproducible labs and production-safe decision making.**
+
+![Portfolio CI](https://github.com/gabrielbdss/cybersecurity-engineering-portfolio/actions/workflows/portfolio-ci.yml/badge.svg)
 
 [Português (Brasil)](README.pt-BR.md) · [Portfolio Index](PORTFOLIO_INDEX.md) · [Methodology](methodology/evidence-first-production-safe.md) · [Security & Confidentiality](SECURITY.md)
 
@@ -14,21 +16,32 @@
 
 ## About
 
-I am a **Cybersecurity Engineer** focused on cloud-native security, incident response, secure delivery pipelines and AI security.
+I am a **Cybersecurity Engineer at FoundLab**, focused on cloud-native security, incident response, secure delivery pipelines and AI security.
 
-I build and document security work around traceable evidence: define scope, collect telemetry, test hypotheses safely, implement controls, and validate remediation. My current work includes security engineering with **FoundLab**, while all public artifacts here remain sanitized and contain no private project, client or production details.
+My work is organized around traceable evidence: define scope and authorization, collect telemetry, separate facts from hypotheses, validate safely, implement proportionate controls, and verify remediation.
 
-This repository turns that approach into inspectable case studies and runnable labs.
+**Professional-affiliation boundary:** FoundLab is referenced here only as professional context. No case study, lab, architecture, incident, finding, ticket, client, source code, telemetry, identifier or control in this repository represents or reproduces a FoundLab private project or production environment. Public artifacts are independently recreated using synthetic data, controlled laboratories or vendor-neutral reference architectures.
 
 ## Author
 
-**Gabriel Barbosa — Cybersecurity Engineer**
+**Gabriel Barbosa — Cybersecurity Engineer**  
+**FoundLab — Cybersecurity Engineer**
 
-Current security engineering work includes **FoundLab**. Public portfolio material intentionally excludes private projects, client information, internal architecture, operational identifiers and non-public findings.
-
-**Selected training & certifications:** Offensive Cybersecurity postgraduate studies · Extreme Hacking / Ethical Hacking · AI Red Teaming · Google Cybersecurity Professional · Threat Intelligence Analyst · AI Security & Governance · AWS Security · Digital Forensics.
+**Selected credentials & training:** Offensive Cybersecurity postgraduate studies · Extreme Hacking / Ethical Hacking · AI Red Teaming · Google Cybersecurity Professional · Threat Intelligence Analyst · AI Security & Governance · AWS Security · Digital Forensics.
 
 **Links:** [GitHub Profile](https://github.com/gabrielbdss) · [LinkedIn](https://www.linkedin.com/in/gabriel-b-souza-silva-255397316)
+
+## Portfolio snapshot
+
+| Evidence | Current repository |
+|---|---:|
+| Security engineering case studies | **6** |
+| Hands-on synthetic labs | **5** |
+| Runnable local security evaluator | **1** |
+| Merge-gate regression tests | **4** |
+| External runtime dependencies for the evaluator | **0** |
+
+These numbers describe inspectable artifacts in this repository, not private employer work.
 
 ## Reproduce a result
 
@@ -48,10 +61,12 @@ echo $?   # expected: 0
 python3 gate.py evidence/unknown.json
 echo $?   # expected: 1
 
-python3 -m unittest test_gate.py
+python3 -m unittest -v test_gate.py
 ```
 
-Expected policy behavior: **PASS, FAIL, PASS, FAIL**. `UNKNOWN` fails closed. See the [validation record](labs/04-devsecops-merge-gate/VALIDATION.md) and [source](labs/04-devsecops-merge-gate/gate.py).
+Expected policy behavior: **PASS, FAIL, PASS, FAIL**. `UNKNOWN` fails closed. The automated repository workflow runs the same regression suite on pushes and pull requests.
+
+See the [validation record](labs/04-devsecops-merge-gate/VALIDATION.md) and [source](labs/04-devsecops-merge-gate/gate.py).
 
 ## Engineering focus
 
@@ -81,17 +96,6 @@ flowchart LR
 **VERIFIED** — independently corroborated.  
 **INFERRED** — supported indirectly, but not directly demonstrated.  
 **UNVERIFIED** — not demonstrated with available evidence.
-
-## Portfolio status
-
-| Area | Status | Evidence |
-|---|---|---|
-| Incident Response | Complete | Case study + synthetic telemetry lab |
-| Cloud Security / Least Privilege | Complete | Case study + effective-access lab |
-| DevSecOps Merge Gate | Complete | Runnable evaluator + fixtures + regression tests |
-| AI Tool Authorization | Complete | Case study + adversarial authorization lab |
-| Incident Response Playbook | Complete | Vendor-neutral operational reference |
-| Dependency Triage | Complete | Case study + synthetic reconciliation lab |
 
 ## Featured case studies
 
@@ -150,7 +154,8 @@ Dependency presence, advisory applicability, reachability reasoning and remediat
 
 ```text
 .
-├── case-studies/      # Security engineering cases
+├── .github/workflows/ # Automated portfolio validation
+├── case-studies/      # Vendor-neutral security engineering cases
 ├── labs/              # Reproducible synthetic exercises
 ├── methodology/       # Evidence First / Production Safe
 ├── templates/         # Reusable security documentation
@@ -161,9 +166,9 @@ Dependency presence, advisory applicability, reachability reasoning and remediat
 
 ## Confidentiality by design
 
-Real-world experience may inform the engineering methodology represented here, but this public repository does **not** publish employer/client identities, production identifiers, credentials, raw operational logs, private tickets, proprietary source code, non-public architecture or unresolved private findings.
+The public portfolio may identify an authorized professional affiliation, but it does **not** publish private projects, client identities, production identifiers, credentials, raw operational logs, internal tickets, proprietary source code, non-public architecture or unresolved private findings.
 
-Public examples are recreated using **synthetic data, controlled laboratories or sufficiently abstract reference architectures**.
+Real-world experience may inform the engineering discipline represented here; the public implementations themselves are **synthetic, controlled or vendor-neutral** and are not copies of employer systems.
 
 See [SECURITY.md](SECURITY.md) for the publication standard.
 
@@ -175,7 +180,8 @@ For a shorter route through the material, use the [Portfolio Index](PORTFOLIO_IN
 
 <div align="center">
 
-**Gabriel Barbosa · Cybersecurity Engineer**
+**Gabriel Barbosa · Cybersecurity Engineer**  
+**FoundLab**
 
 Cloud Security · Incident Response · DevSecOps · AI Security
 
