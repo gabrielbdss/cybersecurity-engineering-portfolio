@@ -4,7 +4,7 @@
 
 ### Cloud Security · Incident Response · DevSecOps · AI Security
 
-**Evidence First · Production Safe · Security by Design**
+**Cloud-first security engineering with reproducible labs and evidence-backed decisions.**
 
 [Português (Brasil)](README.pt-BR.md) · [Portfolio Index](PORTFOLIO_INDEX.md) · [Methodology](methodology/evidence-first-production-safe.md) · [Security & Confidentiality](SECURITY.md)
 
@@ -16,9 +16,42 @@
 
 I am a **Cybersecurity Engineer** focused on cloud-native security, incident response, secure delivery pipelines and AI security.
 
-This portfolio is built around a simple engineering principle: security conclusions should be traceable to evidence. The projects below demonstrate how I define scope, map trust boundaries, collect and classify evidence, test hypotheses safely, design controls and validate remediation without treating production as a laboratory.
+I build and document security work around traceable evidence: define scope, collect telemetry, test hypotheses safely, implement controls, and validate remediation. My current work includes security engineering with **FoundLab**, while all public artifacts here remain sanitized and contain no private project, client or production details.
 
-> **The objective is not to make the strongest claim. It is to make the strongest claim the evidence can support.**
+This repository turns that approach into inspectable case studies and runnable labs.
+
+## Author
+
+**Gabriel Barbosa — Cybersecurity Engineer**
+
+Current security engineering work includes **FoundLab**. Public portfolio material intentionally excludes private projects, client information, internal architecture, operational identifiers and non-public findings.
+
+**Selected training & certifications:** Offensive Cybersecurity postgraduate studies · Extreme Hacking / Ethical Hacking · AI Red Teaming · Google Cybersecurity Professional · Threat Intelligence Analyst · AI Security & Governance · AWS Security · Digital Forensics.
+
+**Links:** [GitHub Profile](https://github.com/gabrielbdss) · LinkedIn *(profile link to be added after URL verification)*
+
+## Reproduce a result
+
+A reviewer can run the DevSecOps Merge Gate locally with no cloud account or external dependency:
+
+```bash
+cd labs/04-devsecops-merge-gate
+python3 gate.py evidence/positive.json
+echo $?   # expected: 0
+
+python3 gate.py evidence/negative.json
+echo $?   # expected: 1
+
+python3 gate.py evidence/not-applicable.json
+echo $?   # expected: 0
+
+python3 gate.py evidence/unknown.json
+echo $?   # expected: 1
+
+python3 -m unittest test_gate.py
+```
+
+Expected policy behavior: **PASS, FAIL, PASS, FAIL**. `UNKNOWN` fails closed. See the [validation record](labs/04-devsecops-merge-gate/VALIDATION.md) and [source](labs/04-devsecops-merge-gate/gate.py).
 
 ## Engineering focus
 
@@ -48,6 +81,17 @@ flowchart LR
 **VERIFIED** — independently corroborated.  
 **INFERRED** — supported indirectly, but not directly demonstrated.  
 **UNVERIFIED** — not demonstrated with available evidence.
+
+## Portfolio status
+
+| Area | Status | Evidence |
+|---|---|---|
+| Incident Response | Complete | Case study + synthetic telemetry lab |
+| Cloud Security / Least Privilege | Complete | Case study + effective-access lab |
+| DevSecOps Merge Gate | Complete | Runnable evaluator + fixtures + regression tests |
+| AI Tool Authorization | Complete | Case study + adversarial authorization lab |
+| Incident Response Playbook | Complete | Vendor-neutral operational reference |
+| Dependency Triage | Complete | Case study + synthetic reconciliation lab |
 
 ## Featured case studies
 
