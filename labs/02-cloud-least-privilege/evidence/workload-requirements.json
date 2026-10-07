@@ -1,0 +1,13 @@
+{
+  "workload": "lab-api",
+  "required_operations": [
+    {"capability":"data.records.read","target":"dataset/app","reason":"read application records"},
+    {"capability":"data.audit.append","target":"table/audit-events","reason":"append security audit events"},
+    {"capability":"crypto.sign","target":"key/audit-signing-key","reason":"sign audit evidence"}
+  ],
+  "not_demonstrated": [
+    "data.audit.delete",
+    "crypto.keys.list",
+    "crypto.sign on unrelated keys"
+  ]
+}
