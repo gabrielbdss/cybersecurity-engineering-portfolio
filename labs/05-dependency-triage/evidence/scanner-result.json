@@ -1,0 +1,11 @@
+{
+  "scanner": "synthetic-audit",
+  "finding": {
+    "package": "example-http-lib",
+    "installed_version": "4.2.0",
+    "severity": "HIGH",
+    "affected_range": ">=4.0.0 <4.2.3",
+    "fixed_version": "4.2.3",
+    "advisory_condition": "affected parser behavior must process attacker-controlled input"
+  }
+}
