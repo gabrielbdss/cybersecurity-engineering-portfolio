@@ -1,0 +1,2 @@
+{"timestamp":"2030-01-15T13:55:00Z","principal":"ci-lab@example.invalid","action":"deployment.read","resource":"service/lab-api","result":"ALLOW"}
+{"timestamp":"2030-01-15T14:10:00Z","principal":"security-lab@example.invalid","action":"iam.policy.read","resource":"project/lab-project","result":"ALLOW"}
