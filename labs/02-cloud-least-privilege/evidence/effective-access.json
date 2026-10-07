@@ -1,0 +1,10 @@
+{
+  "identity": "runtime-lab@example.invalid",
+  "grants": [
+    {"capability":"data.records.read","scope":"dataset/app"},
+    {"capability":"data.audit.append","scope":"dataset/audit"},
+    {"capability":"data.audit.delete","scope":"dataset/audit"},
+    {"capability":"crypto.sign","scope":"project/lab-project"},
+    {"capability":"crypto.keys.list","scope":"project/lab-project"}
+  ]
+}
