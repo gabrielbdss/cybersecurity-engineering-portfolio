@@ -28,7 +28,7 @@ Current security engineering work includes **FoundLab**. Public portfolio materi
 
 **Selected training & certifications:** Offensive Cybersecurity postgraduate studies · Extreme Hacking / Ethical Hacking · AI Red Teaming · Google Cybersecurity Professional · Threat Intelligence Analyst · AI Security & Governance · AWS Security · Digital Forensics.
 
-**Links:** [GitHub Profile](https://github.com/gabrielbdss) · LinkedIn *(profile link to be added after URL verification)*
+**Links:** [GitHub Profile](https://github.com/gabrielbdss) · [LinkedIn](https://www.linkedin.com/in/gabriel-b-souza-silva-255397316)
 
 ## Reproduce a result
 
