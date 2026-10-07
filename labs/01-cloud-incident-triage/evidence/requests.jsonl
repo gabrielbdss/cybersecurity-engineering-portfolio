@@ -1,0 +1,2 @@
+{"timestamp":"2030-01-15T14:02:11Z","request_id":"req-lab-001","method":"POST","path":"/v1/analyze","status":403,"source_ip":"192.0.2.44","authenticated":false,"latency_ms":812}
+{"timestamp":"2030-01-15T14:03:05Z","request_id":"req-lab-002","method":"GET","path":"/health","status":200,"source_ip":"198.51.100.10","authenticated":false,"latency_ms":21}
