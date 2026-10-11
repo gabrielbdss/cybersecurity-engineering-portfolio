@@ -51,7 +51,7 @@ Os [laboratórios de incidentes](labs/01-cloud-incident-triage/README.md) e de [
 1. [Cloud-Native Incident Response](case-studies/01-cloud-native-incident-response/README.md) — [relatório profissional sanitizado (PDF)](case-studies/01-cloud-native-incident-response/Cloud_Native_Incident_Response_Public_Portfolio.pdf)
 2. [Cloud Security Baseline & Least Privilege](case-studies/02-cloud-security-baseline/README.md)
 3. [Deterministic DevSecOps Merge Gate](case-studies/03-devsecops-merge-gate/README.md) — [evidência pública de proteção da main e teste negativo](case-studies/03-devsecops-merge-gate/BRANCH_PROTECTION_VALIDATION.md)
-4. [AI Security & Red Teaming](case-studies/04-ai-security-red-teaming/README.md)
+4. [AI Security & Red Teaming](case-studies/04-ai-security-red-teaming/README.md) — [assessment AppSec real e anonimizado — Projeto Lumen](case-studies/04-ai-security-red-teaming/PROJECT_LUMEN_ASSESSMENT.md)
 5. [Security Incident Response Playbook](case-studies/05-incident-response-playbook/README.md)
 6. [Dependency Vulnerability Triage](case-studies/06-dependency-vulnerability-triage/README.md)
 
@@ -69,7 +69,7 @@ O [Lab 04](labs/04-devsecops-merge-gate/README.md) contém código executável, 
 
 ## Confidencialidade
 
-Experiências profissionais podem orientar a disciplina de engenharia apresentada aqui, mas os artefatos públicos são **sintéticos, controlados ou vendor-neutral**. Não publico projetos privados, identidade de clientes, arquitetura interna, tickets, logs reais, credenciais, código proprietário, identificadores operacionais ou findings não públicos.
+Os laboratórios são **sintéticos ou controlados**. Alguns estudos de caso também apresentam **atividades técnicas realmente executadas em avaliações privadas**, com resultados gerais anonimizados e sem divulgação de evidências, configurações ou arquitetura interna. Não publico projetos privados, identidade de clientes, arquitetura interna, tickets, logs reais, credenciais, código proprietário, identificadores operacionais ou findings não públicos.
 
 Consulte a política completa em [SECURITY.md](SECURITY.md).
 

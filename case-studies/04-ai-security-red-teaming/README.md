@@ -2,6 +2,10 @@
 
 > **Controlled security laboratory.** The scenarios, prompts, identities, tool calls and data used in this case are synthetic. The purpose is to demonstrate security engineering methodology for AI-enabled systems without reproducing a private implementation.
 
+## Executed AppSec assessment (sanitized public evidence)
+
+A separate [Project Lumen assessment](PROJECT_LUMEN_ASSESSMENT.md) describes **real work performed** using Semgrep, Trivy and manual review of private application source. Only general categories and limitations are public. The codename and diagrams are fictitious; no employer systems or original evidence are reproduced. The [formatted 14-page PDF](Projeto_Lumen_AppSec_Assessment_Real_Sanitizado.pdf) is included in this case-study folder.
+
 ## Executive summary
 
 AI-enabled applications introduce trust boundaries that do not exist in conventional request/response systems. A model may interpret untrusted natural language, retrieve external context, call tools, interact with APIs and influence actions in other systems.
