@@ -20,7 +20,7 @@ I am a **Cybersecurity Engineer at FoundLab**, focused on cloud-native security,
 
 My work is organized around traceable evidence: define scope and authorization, collect telemetry, separate facts from hypotheses, validate safely, implement proportionate controls, and verify remediation.
 
-**Professional-affiliation boundary:** FoundLab is referenced here only as professional context. No case study, lab, architecture, incident, finding, ticket, client, source code, telemetry, identifier or control in this repository represents or reproduces a FoundLab private project or production environment. Public artifacts include independent synthetic laboratories and anonymized case studies describing security assessments actually performed. Operational evidence, private implementation details and identifiable findings are not disclosed.
+**Professional-affiliation boundary:** FoundLab is referenced only as professional context. The public portfolio contains synthetic laboratories and anonymized summaries of real security-engineering assessments. No private project or client is identified, and no internal architecture, proprietary source, raw telemetry, credentials, operational identifiers or actionable private findings are reproduced. Such summaries are not assertions about any employer's deployed security posture. Public artifacts include independent synthetic laboratories and anonymized case studies describing security assessments actually performed. Operational evidence, private implementation details and identifiable findings are not disclosed.
 
 ## Author
 
@@ -170,7 +170,7 @@ Dependency presence, advisory applicability, reachability reasoning and remediat
 
 The public portfolio may identify an authorized professional affiliation, but it does **not** publish private projects, client identities, production identifiers, credentials, raw operational logs, internal tickets, proprietary source code, non-public architecture or unresolved private findings.
 
-Real-world experience may inform the engineering discipline represented here; the public implementations themselves are **synthetic, controlled or vendor-neutral** and are not copies of employer systems.
+Public implementations are **synthetic or controlled**; selected written assessments instead summarize **real work performed** at a non-identifying level. Neither category reproduces a private employer system or independently proves its production security state.
 
 See [SECURITY.md](SECURITY.md) for the publication standard.
 
