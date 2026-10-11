@@ -48,7 +48,7 @@ Os [laboratórios de incidentes](labs/01-cloud-incident-triage/README.md) e de [
 
 ## Case studies
 
-1. [Cloud-Native Incident Response](case-studies/01-cloud-native-incident-response/README.md)
+1. [Cloud-Native Incident Response](case-studies/01-cloud-native-incident-response/README.md) — [relatório profissional sanitizado (PDF)](case-studies/01-cloud-native-incident-response/Cloud_Native_Incident_Response_Public_Portfolio.pdf)
 2. [Cloud Security Baseline & Least Privilege](case-studies/02-cloud-security-baseline/README.md)
 3. [Deterministic DevSecOps Merge Gate](case-studies/03-devsecops-merge-gate/README.md) — [evidência pública de proteção da main e teste negativo](case-studies/03-devsecops-merge-gate/BRANCH_PROTECTION_VALIDATION.md)
 4. [AI Security & Red Teaming](case-studies/04-ai-security-red-teaming/README.md)
