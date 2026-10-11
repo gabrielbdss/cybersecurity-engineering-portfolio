@@ -112,7 +112,7 @@ Effective access, workload identity, cryptographic boundaries, data permissions 
 [Read the case study →](case-studies/02-cloud-security-baseline/README.md)
 
 ### 03 · Deterministic DevSecOps Merge Gate
-Deterministic CI/CD security decisions, bounded states, negative testing and fail-closed governance.
+Deterministic CI/CD security decisions, bounded states, negative testing and fail-closed governance. The separate [public branch protection validation](case-studies/03-devsecops-merge-gate/BRANCH_PROTECTION_VALIDATION.md) includes a real GitHub Actions failure and an unmerged blocked PR from this portfolio.
 
 [Read the case study →](case-studies/03-devsecops-merge-gate/README.md)
 

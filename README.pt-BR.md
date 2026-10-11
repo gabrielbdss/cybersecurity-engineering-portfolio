@@ -50,7 +50,7 @@ Os [laboratórios de incidentes](labs/01-cloud-incident-triage/README.md) e de [
 
 1. [Cloud-Native Incident Response](case-studies/01-cloud-native-incident-response/README.md)
 2. [Cloud Security Baseline & Least Privilege](case-studies/02-cloud-security-baseline/README.md)
-3. [Deterministic DevSecOps Merge Gate](case-studies/03-devsecops-merge-gate/README.md)
+3. [Deterministic DevSecOps Merge Gate](case-studies/03-devsecops-merge-gate/README.md) — [evidência pública de proteção da main e teste negativo](case-studies/03-devsecops-merge-gate/BRANCH_PROTECTION_VALIDATION.md)
 4. [AI Security & Red Teaming](case-studies/04-ai-security-red-teaming/README.md)
 5. [Security Incident Response Playbook](case-studies/05-incident-response-playbook/README.md)
 6. [Dependency Vulnerability Triage](case-studies/06-dependency-vulnerability-triage/README.md)
