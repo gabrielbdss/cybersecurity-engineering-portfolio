@@ -4,7 +4,7 @@
 
 ## Executed AppSec assessment (sanitized public evidence)
 
-A separate [Project Lumen assessment](PROJECT_LUMEN_ASSESSMENT.md) describes **real work performed** using Semgrep, Trivy and manual review of private application source. Only general categories and limitations are public. The codename and diagrams are fictitious; no employer systems or original evidence are reproduced. The [formatted PDF](Projeto_Lumen_AppSec_Assessment_Real_Sanitizado.pdf) will be linked after binary upload to this branch.
+A separate [Project Lumen assessment](PROJECT_LUMEN_ASSESSMENT.md) describes **real work performed** using Semgrep, Trivy and manual review of private application source. Only general categories and limitations are public. The codename and diagrams are fictitious; no employer systems or original evidence are reproduced. The [formatted 14-page PDF](Projeto_Lumen_AppSec_Assessment_Real_Sanitizado.pdf) is included in this case-study folder.
 
 ## Executive summary
 
