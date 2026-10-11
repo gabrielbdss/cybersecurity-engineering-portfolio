@@ -21,7 +21,7 @@ Meu trabalho segue uma disciplina baseada em evidências: definir escopo e autor
 | Case studies de engenharia de segurança | **6** |
 | Labs sintéticos hands-on | **5** |
 | Avaliador de segurança executável localmente | **1** |
-| Testes de regressão do merge gate | **4** |
+| Testes de regressão do merge gate | **17** |
 
 ## Áreas demonstradas
 
@@ -63,7 +63,7 @@ Meu trabalho segue uma disciplina baseada em evidências: definir escopo e autor
 
 ## Evidência reproduzível
 
-O [Lab 04](labs/04-devsecops-merge-gate/README.md) contém código executável, fixtures positivas e negativas e testes unitários. O workflow público do repositório executa automaticamente essa validação em pushes e pull requests.
+O [Lab 04](labs/04-devsecops-merge-gate/README.md) contém código executável, fixtures positivas e negativas e testes unitários. O workflow público do repositório executa automaticamente os 17 testes de regressão em pushes e pull requests. O avaliador é um laboratório local sintético; não comprova, por si só, proteção obrigatória da branch no GitHub.
 
 ## Confidencialidade
 
