@@ -1,48 +1,37 @@
 # Lab 02 — Cloud Least-Privilege Review
 
-**Type:** Synthetic laboratory  
-**Safety:** Local analysis only  
-**Goal:** Review effective workload permissions and propose the smallest defensible access reduction without breaking required behavior.
+**Type:** Synthetic laboratory
+**Safety:** Local/read-only analysis; never modifies IAM
+**Goal:** Compare fictional grant declarations with workload requirements.
 
-## Scenario
+## Inputs
 
-A fictional serverless workload uses a runtime identity to read application data, append audit records and invoke a cryptographic signing operation. The supplied policy intentionally grants broader scope than the documented workload requirements.
+- \`evidence/effective-access.json\` — **synthetic declared grant inventory**, not an actual effective IAM computation
+- \`evidence/workload-requirements.json\` — fictional required capabilities and target resources
 
-All resources, identities and permissions are synthetic.
+## Reproduce
 
-## Evidence
+From the repository root:
 
-- `evidence/effective-access.json` — synthetic effective permissions.
-- `evidence/workload-requirements.json` — operations the fictional workload is expected to perform.
-- `expected/remediation-plan.md` — reference analysis.
+\`\`\`bash
+python3 labs/02-cloud-least-privilege/review_access.py
+python3 -m unittest discover -s labs/02-cloud-least-privilege -p "test_*.py" -v
+\`\`\`
 
-## Questions
+The script outputs a JSON report and returns exit code \`0\` for successfully assessed fixtures or \`2\` for malformed or missing evidence. There are no external packages or cloud API requests.
 
-1. Which granted capabilities have a demonstrated workload requirement?
-2. Which capabilities exceed that requirement?
-3. Is broad scope alone sufficient to call something exploitable?
-4. What should be reduced first?
-5. What must be tested before an authorized change?
+## Classification
 
-## Method
+| State | Meaning |
+|---|---|
+| \`MATCHED_DECLARED_SCOPE\` | A matching capability and identical scope string appears in the declared needs |
+| \`SCOPE_REVIEW_REQUIRED\` | Capability is required, but grant scope does not match any declared target exactly |
+| \`NO_DEMONSTRATED_NEED\` | A granted capability has no matching declared requirement |
 
-Compare **effective capability** with **demonstrated need**. Do not infer necessity from a role name and do not infer exploitability merely from excess permission.
+A separate list describes required capabilities with no supplied grant. The synthetic fixture is expected to find **1 scope match**, **2 scope-review candidates** and **2 grants with no demonstrated requirement**.
 
-A defensible recommendation contains:
+**Important:** Scope-string differences are not a calculation of actual cloud permissions or evidence of exploitability. A real assessment would evaluate resource ancestry, binding scope, conditional and deny policies, identity context and verified workload behavior. Do not change IAM based on this exercise.
 
-```text
-Current capability:
-Demonstrated requirement:
-Gap:
-Risk:
-Target capability:
-Validation:
-Rollback:
-Evidence state:
-```
+Seven automated tests cover the expected classifications, missing grants, duplicate grants, malformed input and incomplete requirements.
 
-## Success criteria
-
-The analyst should identify the synthetic delete capability and project-wide cryptographic scope as reduction candidates while preserving required read, append and signing behavior.
-
-The lab ends with a **remediation plan**, not a production mutation.
+See [expected/remediation-plan.md](expected/remediation-plan.md) for reference recommendations and rollback considerations.
