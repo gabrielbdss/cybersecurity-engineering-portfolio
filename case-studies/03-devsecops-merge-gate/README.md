@@ -126,6 +126,10 @@ A defensible implementation should preserve:
 
 A green workflow icon is not the control objective. The control objective is a **predictable security decision whose inputs, exceptions and failure behavior can be explained and reproduced**.
 
+## Public portfolio governance validation
+
+A separate, real-world validation was performed solely against this public portfolio repository: an active GitHub branch ruleset required both CI jobs and blocked [PR #4](https://github.com/gabrielbdss/cybersecurity-engineering-portfolio/pull/4) when an intentionally failing test was introduced. [Read the full evidence record](BRANCH_PROTECTION_VALIDATION.md). This proof is separate from the synthetic gate's decision model and involves no employer infrastructure.
+
 ## Confidentiality note
 
-No private repository, organization, workflow name, internal pull request or production CI configuration is reproduced here.
+No private employer repository, organization workflow, internal pull request or production CI configuration is reproduced here. The linked real validation concerns this personal public portfolio repository only.
