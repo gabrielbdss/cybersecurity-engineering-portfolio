@@ -138,7 +138,7 @@ Dependency presence, advisory applicability, reachability reasoning and remediat
 
 | Lab | Demonstrates | Artifacts |
 |---|---|---|
-| [01 · Cloud Incident Triage](labs/01-cloud-incident-triage/README.md) | evidence-driven incident analysis | Python analyzer, 7 tests, synthetic telemetry |
+| [01 · Cloud Incident Triage](labs/01-cloud-incident-triage/README.md) | evidence-driven incident analysis | Python analyzer, 14 tests, synthetic telemetry |
 | [02 · Cloud Least Privilege](labs/02-cloud-least-privilege/README.md) | synthetic grants vs. declared needs | Python analyzer, 7 tests, remediation plan |
 | [03 · AI Tool Authorization](labs/03-ai-tool-authorization/README.md) | independent authorization boundary | adversarial test vector and policy evidence |
 | [04 · DevSecOps Merge Gate](labs/04-devsecops-merge-gate/README.md) | deterministic fail-closed CI logic | runnable Python evaluator, fixtures and regression tests |
