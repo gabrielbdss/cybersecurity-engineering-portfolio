@@ -15,21 +15,27 @@ Start with the operating methodology, then review how it is applied across cloud
 1. [Cloud-Native Incident Response](case-studies/01-cloud-native-incident-response/README.md)
 2. [Security Incident Response Playbook](case-studies/05-incident-response-playbook/README.md)
 
-### AI Security
-1. [AI Security & Red Teaming](case-studies/04-ai-security-red-teaming/README.md)
-2. Review the shared evidence methodology to see how AI test results are classified without overstating assurance.
+### Application & AI Security
+1. [Project Lumen — real AppSec assessment, anonymized](case-studies/04-ai-security-red-teaming/PROJECT_LUMEN_ASSESSMENT.md) ([PDF](case-studies/04-ai-security-red-teaming/Projeto_Lumen_AppSec_Assessment_Real_Sanitizado.pdf))
+2. [AI Security & Red Teaming](case-studies/04-ai-security-red-teaming/README.md) — synthetic model and tool authorization laboratory
+3. [Dependency Vulnerability Triage](case-studies/06-dependency-vulnerability-triage/README.md)
 
 ## Portfolio map
 
 | Artifact | Primary domain | Format | Publication basis |
 |---|---|---|---|
 | Evidence First / Production Safe | Security Engineering | Methodology | Public methodology |
-| Cloud-Native Incident Response | Incident Response | Case study | Sanitized / synthetic |
+| Cloud-Native Incident Response | Incident Response | Sanitized [PDF](case-studies/01-cloud-native-incident-response/Cloud_Native_Incident_Response_Public_Portfolio.pdf) | Generic/synthetic operational examples |
 | Cloud Security Baseline | Cloud Security | Case study | Controlled reference |
-| DevSecOps Merge Gate | DevSecOps | Case study | Laboratory design |
-| AI Security & Red Teaming | AI Security | Case study | Controlled laboratory |
+| DevSecOps Merge Gate | DevSecOps | Case study | Synthetic evaluator + real [GitHub negative check](case-studies/03-devsecops-merge-gate/BRANCH_PROTECTION_VALIDATION.md) |
+| AI Security & Red Teaming | AI Security | Case study | Controlled synthetic laboratory |
+| Project Lumen assessment | Application Security | Sanitized case + 14-page PDF | Real work described, primary private evidence withheld |
 | Incident Response Playbook | Incident Response | Operational reference | Vendor-neutral |
 | Security Case Study Template | Governance | Template | Reusable public template |
+
+## Study and interview preparation
+
+[Guided learning plan and interview drills](LEARNING_PATH.md) — reproduce Python analyzers, explain IAM, branch rules, AppSec and AI trust boundaries without treating documentation as proof of independent competence.
 
 ## Publication standard
 

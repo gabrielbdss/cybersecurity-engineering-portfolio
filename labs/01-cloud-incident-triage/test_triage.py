@@ -98,5 +98,86 @@ class TriageTests(unittest.TestCase):
             self.assertEqual(report["denied_requests"], [])
 
 
+    def test_stale_denial_is_not_correlated(self):
+        with tempfile.TemporaryDirectory() as td:
+            directory = pathlib.Path(td)
+            self.copy_data(directory)
+            path = directory / "application.jsonl"
+            records = [json.loads(row) for row in path.read_text().splitlines()]
+            records[0]["timestamp"] = "2030-01-15T14:08:00Z"
+            path.write_text("\n".join(json.dumps(row) for row in records) + "\n")
+            code, report = self.run_tool(directory)
+            self.assertEqual(code, 0)
+            self.assertFalse(report["denied_requests"][0]["application_denial_correlated"])
+
+    def test_early_denial_is_not_correlated(self):
+        with tempfile.TemporaryDirectory() as td:
+            directory = pathlib.Path(td)
+            self.copy_data(directory)
+            path = directory / "application.jsonl"
+            records = [json.loads(row) for row in path.read_text().splitlines()]
+            records[0]["timestamp"] = "2030-01-15T13:59:00Z"
+            path.write_text("\n".join(json.dumps(row) for row in records) + "\n")
+            code, report = self.run_tool(directory)
+            self.assertEqual(code, 0)
+            self.assertFalse(report["denied_requests"][0]["application_denial_correlated"])
+
+    def test_duplicate_request_id_fails_closed(self):
+        with tempfile.TemporaryDirectory() as td:
+            directory = pathlib.Path(td)
+            self.copy_data(directory)
+            path = directory / "requests.jsonl"
+            original = path.read_text()
+            path.write_text(original + original.splitlines()[0] + "\n")
+            code, report = self.run_tool(directory)
+            self.assertEqual(code, 2)
+            self.assertIn("duplicate request_id", report["error"])
+
+    def test_invalid_status_fails_closed(self):
+        with tempfile.TemporaryDirectory() as td:
+            directory = pathlib.Path(td)
+            self.copy_data(directory)
+            path = directory / "requests.jsonl"
+            records = [json.loads(row) for row in path.read_text().splitlines()]
+            records[0]["status"] = 999
+            path.write_text("\n".join(json.dumps(row) for row in records) + "\n")
+            code, report = self.run_tool(directory)
+            self.assertEqual(code, 2)
+            self.assertIn("valid HTTP integer", report["error"])
+
+    def test_orphan_application_event_is_not_misattributed(self):
+        with tempfile.TemporaryDirectory() as td:
+            directory = pathlib.Path(td)
+            self.copy_data(directory)
+            path = directory / "application.jsonl"
+            extra = {"timestamp": "2030-01-15T14:09:00Z",
+                     "request_id": "orphan-0001", "event": "AUTHORIZATION_DENIED"}
+            path.write_text(path.read_text() + json.dumps(extra) + "\n")
+            code, report = self.run_tool(directory)
+            self.assertEqual(code, 0)
+            self.assertEqual(report["orphan_application_request_ids"], ["orphan-0001"])
+
+    def test_audit_causal_linkage_remains_unestablished(self):
+        code, report = self.run_tool(EVIDENCE)
+        self.assertEqual(code, 0)
+        self.assertEqual(report["audit_request_correlation"], "NOT_ESTABLISHED")
+        self.assertEqual(report["correlation_window_seconds"], 120)
+        self.assertEqual(report["source_counts"],
+                         {"request": 2, "application": 3, "audit": 2})
+
+    def test_offset_normalizes_and_correlates(self):
+        with tempfile.TemporaryDirectory() as td:
+            directory = pathlib.Path(td)
+            self.copy_data(directory)
+            path = directory / "requests.jsonl"
+            records = [json.loads(row) for row in path.read_text().splitlines()]
+            records[0]["timestamp"] = "2030-01-15T11:02:11-03:00"
+            path.write_text("\n".join(json.dumps(row) for row in records) + "\n")
+            code, report = self.run_tool(directory)
+            self.assertEqual(code, 0)
+            self.assertTrue(report["denied_requests"][0]["application_denial_correlated"])
+            self.assertEqual(report["denied_requests"][0]["timestamp"],
+                             "2030-01-15T14:02:11Z")
+
 if __name__ == "__main__":
     unittest.main()

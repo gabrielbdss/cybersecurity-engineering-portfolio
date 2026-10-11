@@ -5,9 +5,10 @@ from collections import defaultdict
 from datetime import datetime, timezone
 import json
 from pathlib import Path
-import sys
 
 ROOT = Path(__file__).resolve().parent
+# Narrow, synthetic correlation window; not a universal incident-response standard.
+CORRELATION_WINDOW_SECONDS = 120
 
 
 def timestamp_utc(value):
@@ -54,19 +55,25 @@ def analyze(directory):
 
     by_request = defaultdict(list)
     timeline = []
+    request_ids = set()
     for source, records in sources.items():
         for record in records:
             request_id = record.get("request_id")
             if source != "audit" and (not isinstance(request_id, str) or not request_id):
                 raise ValueError(f"{source}: request_id is required")
+            if source == "request":
+                if request_id in request_ids:
+                    raise ValueError("request: duplicate request_id")
+                request_ids.add(request_id)
             if source == "application":
                 if not isinstance(record.get("event"), str):
                     raise ValueError("application: event must be a string")
                 by_request[request_id].append(record)
             if source == "request":
                 status = record.get("status")
-                if isinstance(status, bool) or not isinstance(status, int):
-                    raise ValueError("request: status must be an integer")
+                if (isinstance(status, bool) or not isinstance(status, int)
+                        or not 100 <= status <= 599):
+                    raise ValueError("request: status must be a valid HTTP integer")
                 description = f"HTTP {status}"
             elif source == "application":
                 description = record["event"]
@@ -85,8 +92,16 @@ def analyze(directory):
     denied = []
     for request in sources["request"]:
         if request["status"] == 403:
+            request_time = datetime.fromisoformat(
+                request["timestamp"].replace("Z", "+00:00")
+            )
             matching = any(
                 item["event"] == "AUTHORIZATION_DENIED"
+                and 0 <= (
+                    datetime.fromisoformat(
+                        item["timestamp"].replace("Z", "+00:00")
+                    ) - request_time
+                ).total_seconds() <= CORRELATION_WINDOW_SECONDS
                 for item in by_request[request["request_id"]]
             )
             denied.append({
@@ -100,6 +115,13 @@ def analyze(directory):
     return {
         "data_type": "synthetic_laboratory",
         "request_count": len(sources["request"]),
+        "source_counts": {name: len(items) for name, items in sources.items()},
+        "correlation_window_seconds": CORRELATION_WINDOW_SECONDS,
+        "orphan_application_request_ids": sorted({
+            record["request_id"] for record in sources["application"]
+            if record["request_id"] not in request_ids
+        }),
+        "audit_request_correlation": "NOT_ESTABLISHED",
         "denied_requests": denied,
         "audit_actions_in_sample": sorted({
             item["action"] for item in sources["audit"]
@@ -112,7 +134,10 @@ def analyze(directory):
         "limitation": (
             "Observed status codes and application events do not prove attacker "
             "intent, credential compromise, absence of side effects, or safety "
-            "outside the supplied synthetic time window."
+            "outside the supplied synthetic time window. An application denial "
+            "must share a request ID and occur within 120 seconds after the "
+            "HTTP request. Sampled audit events lack matching request IDs and "
+            "are not claimed as causally correlated."
         ),
         "timeline": timeline,
     }

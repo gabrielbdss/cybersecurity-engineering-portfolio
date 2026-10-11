@@ -6,7 +6,7 @@ This public portfolio follows a publication-safety standard.
 
 An employer or professional affiliation may be named when that relationship is authorized for public disclosure. **Naming an affiliation does not authorize publication of private work.**
 
-References to **FoundLab** in this repository identify professional context only. Public case studies, labs, diagrams, evidence, findings and controls must not be interpreted as reproductions of FoundLab projects, systems or production environments.
+References to **FoundLab** identify authorized professional context only. This portfolio distinguishes synthetic laboratories, public GitHub governance evidence and anonymized summaries of real assessments. None should be interpreted as evidence of the current private infrastructure or security posture of any employer.
 
 ## Never publish
 
@@ -14,9 +14,14 @@ Do not publish private project or client names; production identifiers; real ser
 
 ## Safe transformation rule
 
-Real-world experience may inform methodology, but public artifacts use **synthetic data, controlled laboratories or sufficiently abstract vendor-neutral reference architectures**.
+Classify each release before publication:
+- **Synthetic laboratory** — fictional evidence, code or architecture used for reproducible exercises.
+- **Anonymized real work** — actual investigation or assessment activity, with primary evidence withheld and all identifiable/reconstructable non-public details removed.
+- **Public repository validation** — outcomes independently visible in this personal public GitHub repository (PRs, checks and branch rules).
 
-Sanitization must not fabricate professional experience. Labs are identified as labs and synthetic evidence is identified as synthetic evidence.
+A case summary must not imply that private findings are publicly reproducible or that the employer's deployed configuration was verified. Sanitization must not fabricate professional experience, tests, findings, fixes, independent review or signatures. Portfolio examples may omit material necessary to reproduce real outcomes.
+
+**Licensing note:** the repository's MIT license does not establish rights to reproduce third-party confidential source code or private employer records. Publication rights must be confirmed before any release.
 
 ## Pre-publication gate
 

@@ -8,7 +8,7 @@
 
 ![Portfolio CI](https://github.com/gabrielbdss/cybersecurity-engineering-portfolio/actions/workflows/portfolio-ci.yml/badge.svg)
 
-[Português (Brasil)](README.pt-BR.md) · [Portfolio Index](PORTFOLIO_INDEX.md) · [Methodology](methodology/evidence-first-production-safe.md) · [Security & Confidentiality](SECURITY.md)
+[Português (Brasil)](README.pt-BR.md) · [Portfolio Index](PORTFOLIO_INDEX.md) · [Learning Path](LEARNING_PATH.md) · [Methodology](methodology/evidence-first-production-safe.md) · [Security & Confidentiality](SECURITY.md)
 
 </div>
 
@@ -20,7 +20,7 @@ I am a **Cybersecurity Engineer at FoundLab**, focused on cloud-native security,
 
 My work is organized around traceable evidence: define scope and authorization, collect telemetry, separate facts from hypotheses, validate safely, implement proportionate controls, and verify remediation.
 
-**Professional-affiliation boundary:** FoundLab is referenced only as professional context. The public portfolio contains synthetic laboratories and anonymized summaries of real security-engineering assessments. No private project or client is identified, and no internal architecture, proprietary source, raw telemetry, credentials, operational identifiers or actionable private findings are reproduced. Such summaries are not assertions about any employer's deployed security posture. Public artifacts include independent synthetic laboratories and anonymized case studies describing security assessments actually performed. Operational evidence, private implementation details and identifiable findings are not disclosed.
+**Professional-affiliation boundary:** FoundLab is referenced only as professional context. The public portfolio contains synthetic laboratories and anonymized summaries of real security-engineering assessments. No private project or client is identified, and no internal architecture, proprietary source, raw telemetry, credentials, operational identifiers or actionable private findings are reproduced. Such summaries are not assertions about any employer's deployed security posture.
 
 ## Author
 
@@ -39,6 +39,9 @@ My work is organized around traceable evidence: define scope and authorization, 
 | Hands-on synthetic labs | **5** |
 | Runnable local security tools | **3** |
 | Merge-gate regression tests | **17** |
+| Incident-triage regression tests | **14** |
+| Least-privilege regression tests | **7** |
+| Total runnable Python unit tests | **38** |
 | External runtime dependencies for the tools | **0** |
 
 These numbers describe inspectable artifacts in this repository, not private employer work.
@@ -66,7 +69,7 @@ echo $?   # expected: 1
 python3 -m unittest -v test_gate.py
 ```
 
-Expected policy behavior: **PASS, FAIL, PASS, FAIL**. `UNKNOWN` fails closed. The `lab-v2` evaluator also rejects missing required lanes, invalid policy versions and unauthorized `N/A` exemptions; the 17-test suite covers these cases. The automated repository workflow runs the same regression suite on pushes and pull requests. This is a synthetic local policy evaluator, not an assertion that GitHub branch protection is enabled.
+Expected policy behavior: **PASS, FAIL, PASS, FAIL**. `UNKNOWN` fails closed. The `lab-v2` evaluator also rejects missing required lanes, invalid policy versions and unauthorized `N/A` exemptions; the 17-test suite covers these cases. The CI workflow runs the suites on pushes and PRs. The synthetic evaluator is separate from GitHub's **active branch ruleset**, whose failed-check blocking behavior was verified publicly in [PR #4](https://github.com/gabrielbdss/cybersecurity-engineering-portfolio/pull/4).
 
 See the [validation record](labs/04-devsecops-merge-gate/VALIDATION.md) and [source](labs/04-devsecops-merge-gate/gate.py).
 

@@ -18,12 +18,18 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4 (verified SHA)
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5 (verified SHA)
         with:
           python-version: "3.12"
+
+      - name: Python syntax check
+        run: python3 -m compileall -q labs
+
+      - name: Check Markdown links
+        run: python3 scripts/check_portfolio_links.py
 
       - name: Run regression tests
         working-directory: labs/04-devsecops-merge-gate
@@ -53,11 +59,13 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4 (verified SHA)
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5 (verified SHA)
         with:
           python-version: "3.12"
+      - name: Python syntax check
+        run: python3 -m compileall -q labs
       - name: Incident triage regression tests
         run: python3 -m unittest discover -s labs/01-cloud-incident-triage -p 'test_*.py' -v
       - name: Least privilege regression tests
