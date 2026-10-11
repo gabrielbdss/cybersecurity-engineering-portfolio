@@ -46,3 +46,24 @@ jobs:
             echo "unknown.json unexpectedly passed"
             exit 1
           fi
+
+  validate-cloud-security-labs:
+    name: Validate synthetic cloud-security labs
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Incident triage regression tests
+        run: python3 -m unittest discover -s labs/01-cloud-incident-triage -p 'test_*.py' -v
+      - name: Least privilege regression tests
+        run: python3 -m unittest discover -s labs/02-cloud-least-privilege -p 'test_*.py' -v
+      - name: Smoke test local analyzers
+        run: |
+          set -euo pipefail
+          python3 labs/01-cloud-incident-triage/triage.py > /dev/null
+          python3 labs/02-cloud-least-privilege/review_access.py > /dev/null

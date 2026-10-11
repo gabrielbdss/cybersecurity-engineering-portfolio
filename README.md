@@ -37,11 +37,13 @@ My work is organized around traceable evidence: define scope and authorization, 
 |---|---:|
 | Security engineering case studies | **6** |
 | Hands-on synthetic labs | **5** |
-| Runnable local security evaluator | **1** |
+| Runnable local security tools | **3** |
 | Merge-gate regression tests | **4** |
-| External runtime dependencies for the evaluator | **0** |
+| External runtime dependencies for the tools | **0** |
 
 These numbers describe inspectable artifacts in this repository, not private employer work.
+
+**New executable evidence:** [Cloud Incident Triage](labs/01-cloud-incident-triage/README.md) correlates synthetic JSONL telemetry; [Cloud Least Privilege](labs/02-cloud-least-privilege/README.md) compares fictional grant declarations with requirements. Both run locally with regression tests and without cloud credentials.
 
 ## Reproduce a result
 
