@@ -20,7 +20,7 @@ I am a **Cybersecurity Engineer at FoundLab**, focused on cloud-native security,
 
 My work is organized around traceable evidence: define scope and authorization, collect telemetry, separate facts from hypotheses, validate safely, implement proportionate controls, and verify remediation.
 
-**Professional-affiliation boundary:** FoundLab is referenced here only as professional context. No case study, lab, architecture, incident, finding, ticket, client, source code, telemetry, identifier or control in this repository represents or reproduces a FoundLab private project or production environment. Public artifacts are independently recreated using synthetic data, controlled laboratories or vendor-neutral reference architectures.
+**Professional-affiliation boundary:** FoundLab is referenced here only as professional context. No case study, lab, architecture, incident, finding, ticket, client, source code, telemetry, identifier or control in this repository represents or reproduces a FoundLab private project or production environment. Public artifacts include independent synthetic laboratories and anonymized case studies describing security assessments actually performed. Operational evidence, private implementation details and identifiable findings are not disclosed.
 
 ## Author
 
@@ -117,7 +117,7 @@ Deterministic CI/CD security decisions, bounded states, negative testing and fai
 [Read the case study →](case-studies/03-devsecops-merge-gate/README.md)
 
 ### 04 · AI Security & Red Teaming
-Prompt injection, excessive agency, retrieval boundaries, tool authorization and explicit AI security invariants.
+Prompt injection, excessive agency, retrieval boundaries and tool authorization. A [separate anonymized AppSec assessment](case-studies/04-ai-security-red-teaming/PROJECT_LUMEN_ASSESSMENT.md) documents real Semgrep, Trivy and manual code-review work without exposing the private target.
 
 [Read the case study →](case-studies/04-ai-security-red-teaming/README.md)
 
