@@ -28,6 +28,9 @@ jobs:
       - name: Python syntax check
         run: python3 -m compileall -q labs
 
+      - name: Check Markdown links
+        run: python3 scripts/check_portfolio_links.py
+
       - name: Run regression tests
         working-directory: labs/04-devsecops-merge-gate
         run: python3 -m unittest -v test_gate.py

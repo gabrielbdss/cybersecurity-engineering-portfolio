@@ -4,7 +4,7 @@
 
 > **Evidence First. Production Safe. Security by Design.**
 
-[English version](README.md)
+[English version](README.md) · [Plano de estudos e exercícios técnicos](LEARNING_PATH.md)
 
 ## Sobre
 
@@ -12,7 +12,7 @@ Atuo como **Cybersecurity Engineer na FoundLab**, com foco em segurança cloud-n
 
 Meu trabalho segue uma disciplina baseada em evidências: definir escopo e autorização, coletar telemetria, separar fatos de hipóteses, validar com segurança, propor controles proporcionais e verificar a remediação.
 
-**Limite de afiliação profissional:** a FoundLab é citada neste repositório apenas como contexto profissional. Nenhum case, lab, arquitetura, incidente, finding, ticket, cliente, código-fonte, telemetria, identificador ou controle publicado aqui representa ou reproduz projeto privado ou ambiente de produção da empresa.
+**Limite de afiliação profissional:** a FoundLab é citada neste repositório apenas como contexto profissional. O repositório diferencia **laboratórios sintéticos**, **evidências públicas do próprio GitHub** e **resumos anonimizados de avaliações que realmente executei**. Não publica arquitetura interna, códigos proprietários, logs brutos, credenciais, achados sensíveis ou configuração real da empresa.
 
 ## Visão rápida do portfólio
 
@@ -22,6 +22,9 @@ Meu trabalho segue uma disciplina baseada em evidências: definir escopo e autor
 | Labs sintéticos hands-on | **5** |
 | Ferramentas de segurança executáveis localmente | **3** |
 | Testes de regressão do merge gate | **17** |
+| Testes do laboratório de incidentes | **14** |
+| Testes do laboratório de permissões | **7** |
+| Total de testes unitários Python | **38** |
 
 Os [laboratórios de incidentes](labs/01-cloud-incident-triage/README.md) e de [menor privilégio](labs/02-cloud-least-privilege/README.md) agora incluem analisadores Python e sete testes cada, com evidências sintéticas e sem acesso a ambientes reais.
 
@@ -65,7 +68,7 @@ Os [laboratórios de incidentes](labs/01-cloud-incident-triage/README.md) e de [
 
 ## Evidência reproduzível
 
-O [Lab 04](labs/04-devsecops-merge-gate/README.md) contém código executável, fixtures positivas e negativas e testes unitários. O workflow público do repositório executa automaticamente os 17 testes de regressão em pushes e pull requests. O avaliador é um laboratório local sintético; não comprova, por si só, proteção obrigatória da branch no GitHub.
+O [Lab 04](labs/04-devsecops-merge-gate/README.md) contém código executável, fixtures positivas e negativas e testes unitários. O workflow público executa 38 testes unitários, uma checagem sintática e verificação de links locais. A proteção obrigatória da branch é feita pelo ruleset do GitHub, validado com uma [PR negativa](case-studies/03-devsecops-merge-gate/BRANCH_PROTECTION_VALIDATION.md).
 
 ## Confidencialidade
 
