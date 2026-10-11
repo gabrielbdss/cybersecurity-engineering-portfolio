@@ -10,7 +10,7 @@
 
 [**Project Lumen — Application Security Assessment (14-page PDF)**](Projeto_Lumen_AppSec_Assessment_Real_Sanitizado.pdf)
 
-The PDF is the full formatted portfolio deliverable. This Markdown summary explains the evidence boundary and makes the engineering methods accessible to code reviewers. **The PDF link is valid only after the PDF has been uploaded to this exact path in this branch.**
+The PDF is the full formatted portfolio deliverable. This Markdown summary explains the evidence boundary and makes the engineering methods accessible to code reviewers. **The sanitized 14-page PDF is included alongside this summary in the public case-study folder.**
 
 ## 1. Scope and work actually performed
 
