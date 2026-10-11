@@ -1,6 +1,14 @@
 # Case Study 01 — Cloud-Native Incident Response
 
-> **Sanitized reference case.** Evidence and identifiers are synthetic.
+> **Sanitized reference case.** Identifiers and operational evidence are generalized or synthetic; this is not an internal incident report.
+
+## Publication-ready PDF case study
+
+[**Cloud-Native Incident Response — Sanitized Public Portfolio Edition (PDF)**](Cloud_Native_Incident_Response_Public_Portfolio.pdf)
+
+Eight-page, author-sanitized public edition covering scope, evidence classification, relative timeline, fail-closed behavior, control-plane correlation, findings and limitations. Professional affiliation is mentioned by author-reported permission. The PDF does **not** assert an Alex Bolson signature or independent publication review.
+
+[Public release boundary and publication notes](PUBLICATION_SCOPE.md). This is a professional methodology case presented with generic/synthetic operational details; no employer production configuration, raw logs or unreleased findings are represented.
 
 ## Scenario
 
@@ -42,4 +50,4 @@ An unusual request and correlated security/application events can be demonstrate
 
 ## Confidentiality
 
-No employer/client identity, real endpoint, operational IP, private ticket, production identifier or raw private log is included.
+FoundLab is identified only as the author's publicly authorized professional affiliation. No employer private-project or client identity, real endpoint, operational IP, private ticket, production identifier or raw private log is included.
