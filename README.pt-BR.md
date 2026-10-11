@@ -21,9 +21,9 @@ Meu trabalho segue uma disciplina baseada em evidências: definir escopo e autor
 | Case studies de engenharia de segurança | **6** |
 | Labs sintéticos hands-on | **5** |
 | Ferramentas de segurança executáveis localmente | **3** |
-| Testes de regressão do merge gate | **4** |
+| Testes de regressão do merge gate | **17** |
 
-Os [laboratórios de incidentes](labs/01-cloud-incident-triage/README.md) e de [menor privilégio](labs/02-cloud-least-privilege/README.md) agora incluem scripts Python, testes de regressão e evidências sintéticas, sem credenciais ou acesso à nuvem.
+Os [laboratórios de incidentes](labs/01-cloud-incident-triage/README.md) e de [menor privilégio](labs/02-cloud-least-privilege/README.md) agora incluem analisadores Python e sete testes cada, com evidências sintéticas e sem acesso a ambientes reais.
 
 ## Áreas demonstradas
 
@@ -65,7 +65,7 @@ Os [laboratórios de incidentes](labs/01-cloud-incident-triage/README.md) e de [
 
 ## Evidência reproduzível
 
-O [Lab 04](labs/04-devsecops-merge-gate/README.md) contém código executável, fixtures positivas e negativas e testes unitários. O workflow público do repositório executa automaticamente essa validação em pushes e pull requests.
+O [Lab 04](labs/04-devsecops-merge-gate/README.md) contém código executável, fixtures positivas e negativas e testes unitários. O workflow público do repositório executa automaticamente os 17 testes de regressão em pushes e pull requests. O avaliador é um laboratório local sintético; não comprova, por si só, proteção obrigatória da branch no GitHub.
 
 ## Confidencialidade
 

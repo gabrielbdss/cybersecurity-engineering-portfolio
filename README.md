@@ -38,12 +38,12 @@ My work is organized around traceable evidence: define scope and authorization, 
 | Security engineering case studies | **6** |
 | Hands-on synthetic labs | **5** |
 | Runnable local security tools | **3** |
-| Merge-gate regression tests | **4** |
+| Merge-gate regression tests | **17** |
 | External runtime dependencies for the tools | **0** |
 
 These numbers describe inspectable artifacts in this repository, not private employer work.
 
-**New executable evidence:** [Cloud Incident Triage](labs/01-cloud-incident-triage/README.md) correlates synthetic JSONL telemetry; [Cloud Least Privilege](labs/02-cloud-least-privilege/README.md) compares fictional grant declarations with requirements. Both run locally with regression tests and without cloud credentials.
+**Additional executable evidence:** [Cloud Incident Triage](labs/01-cloud-incident-triage/README.md) correlates fictional JSONL telemetry; [Cloud Least Privilege](labs/02-cloud-least-privilege/README.md) compares synthetic declared grants with workload requirements. Both use local-only Python scripts and tests, with no cloud credentials.
 
 ## Reproduce a result
 
@@ -66,7 +66,7 @@ echo $?   # expected: 1
 python3 -m unittest -v test_gate.py
 ```
 
-Expected policy behavior: **PASS, FAIL, PASS, FAIL**. `UNKNOWN` fails closed. The automated repository workflow runs the same regression suite on pushes and pull requests.
+Expected policy behavior: **PASS, FAIL, PASS, FAIL**. `UNKNOWN` fails closed. The `lab-v2` evaluator also rejects missing required lanes, invalid policy versions and unauthorized `N/A` exemptions; the 17-test suite covers these cases. The automated repository workflow runs the same regression suite on pushes and pull requests. This is a synthetic local policy evaluator, not an assertion that GitHub branch protection is enabled.
 
 See the [validation record](labs/04-devsecops-merge-gate/VALIDATION.md) and [source](labs/04-devsecops-merge-gate/gate.py).
 
@@ -135,8 +135,8 @@ Dependency presence, advisory applicability, reachability reasoning and remediat
 
 | Lab | Demonstrates | Artifacts |
 |---|---|---|
-| [01 · Cloud Incident Triage](labs/01-cloud-incident-triage/README.md) | evidence-driven incident analysis | synthetic request, application and audit telemetry |
-| [02 · Cloud Least Privilege](labs/02-cloud-least-privilege/README.md) | effective-access review | permissions, workload requirements, remediation plan |
+| [01 · Cloud Incident Triage](labs/01-cloud-incident-triage/README.md) | evidence-driven incident analysis | Python analyzer, 7 tests, synthetic telemetry |
+| [02 · Cloud Least Privilege](labs/02-cloud-least-privilege/README.md) | synthetic grants vs. declared needs | Python analyzer, 7 tests, remediation plan |
 | [03 · AI Tool Authorization](labs/03-ai-tool-authorization/README.md) | independent authorization boundary | adversarial test vector and policy evidence |
 | [04 · DevSecOps Merge Gate](labs/04-devsecops-merge-gate/README.md) | deterministic fail-closed CI logic | runnable Python evaluator, fixtures and regression tests |
 | [05 · Dependency Triage](labs/05-dependency-triage/README.md) | vulnerability reconciliation | scanner, dependency-path and reachability evidence |
