@@ -26,7 +26,7 @@ Meu trabalho segue uma disciplina baseada em evidências: definir escopo e autor
 | Testes do laboratório de permissões | **7** |
 | Total de testes unitários Python | **38** |
 
-Os [laboratórios de incidentes](labs/01-cloud-incident-triage/README.md) e de [menor privilégio](labs/02-cloud-least-privilege/README.md) agora incluem analisadores Python e sete testes cada, com evidências sintéticas e sem acesso a ambientes reais.
+Os [laboratórios de incidentes](labs/01-cloud-incident-triage/README.md) e de [menor privilégio](labs/02-cloud-least-privilege/README.md) incluem analisadores Python, com 14 testes no laboratório de incidentes e sete no de menor privilégio, com evidências sintéticas e sem acesso a ambientes reais.
 
 ## Áreas demonstradas
 
