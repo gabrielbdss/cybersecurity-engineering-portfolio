@@ -38,7 +38,7 @@ My work is organized around traceable evidence: define scope and authorization, 
 | Security engineering case studies | **6** |
 | Hands-on synthetic labs | **5** |
 | Runnable local security evaluator | **1** |
-| Merge-gate regression tests | **4** |
+| Merge-gate regression tests | **17** |
 | External runtime dependencies for the evaluator | **0** |
 
 These numbers describe inspectable artifacts in this repository, not private employer work.
@@ -64,7 +64,7 @@ echo $?   # expected: 1
 python3 -m unittest -v test_gate.py
 ```
 
-Expected policy behavior: **PASS, FAIL, PASS, FAIL**. `UNKNOWN` fails closed. The automated repository workflow runs the same regression suite on pushes and pull requests.
+Expected policy behavior: **PASS, FAIL, PASS, FAIL**. `UNKNOWN` fails closed. The `lab-v2` evaluator also rejects missing required lanes, invalid policy versions and unauthorized `N/A` exemptions; the 17-test suite covers these cases. The automated repository workflow runs the same regression suite on pushes and pull requests. This is a synthetic local policy evaluator, not an assertion that GitHub branch protection is enabled.
 
 See the [validation record](labs/04-devsecops-merge-gate/VALIDATION.md) and [source](labs/04-devsecops-merge-gate/gate.py).
 

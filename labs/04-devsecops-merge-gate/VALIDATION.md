@@ -1,30 +1,37 @@
 # Lab 04 — Validation Record
 
-The evaluator is designed for local deterministic testing.
+**Policy:** `lab-v2`
+**Scope:** local synthetic evaluator, not a production CI/CD protection claim.
 
-| Fixture | Expected decision | Security property |
-|---|---|---|
-| `positive.json` | PASS | all required lanes acceptable |
-| `negative.json` | FAIL | downstream failure closes gate |
-| `not-applicable.json` | PASS | N/A must be explicit policy state |
-| `unknown.json` | FAIL | unexpected state is not silently accepted |
+## Regression coverage
+
+| Scenario | Expected |
+|---|---|
+| Required lanes all PASS | PASS |
+| Security lane FAIL | FAIL |
+| Explicit deploy N/A for documentation-only changes | PASS |
+| UNKNOWN state | FAIL |
+| Unresolved PENDING snapshot | FAIL |
+| Missing security lane | FAIL |
+| Only build lane supplied | FAIL |
+| Unexpected extra lane | FAIL |
+| Unsupported policy version | FAIL |
+| Deploy N/A for code change | FAIL |
+| Security N/A even for documentation changes | FAIL |
+| Missing changed-files metadata | FAIL |
+| Path traversal | FAIL |
+| Invalid state type | FAIL |
+| Non-object input | FAIL |
+| Malformed JSON | FAIL |
+| Missing input file | FAIL |
 
 ## Reproduce
 
 ```bash
-python3 gate.py evidence/positive.json
-echo $?
-
-python3 gate.py evidence/negative.json
-echo $?
-
-python3 gate.py evidence/not-applicable.json
-echo $?
-
-python3 gate.py evidence/unknown.json
-echo $?
+cd labs/04-devsecops-merge-gate
+python3 -m unittest -v test_gate.py
 ```
 
-Expected exit codes: `0, 1, 0, 1`.
+The suite should run **17 tests**. The repository workflow executes the suite on pushes and pull requests, as well as the four named fixture decisions.
 
-This validation record describes the intended deterministic behavior of the included local evaluator. It does not represent a production CI/CD control.
+The evaluator accepts only the narrow, explicitly coded documentation exception. Its `changed_files` field is synthetic test input; it is **not cryptographically or independently verified** and must not be trusted for authorization in a live merge decision. This lab does not implement polling, GitHub rulesets or branch protection.

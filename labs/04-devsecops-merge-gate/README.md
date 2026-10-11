@@ -1,66 +1,41 @@
 # Lab 04 — Deterministic DevSecOps Merge Gate
 
-**Type:** Synthetic CI/CD security laboratory  
-**Safety:** No production repository or deployment  
-**Goal:** Demonstrate a deterministic, fail-closed merge decision across multiple CI lanes.
+**Type:** Synthetic CI/CD security laboratory
+**Safety:** Local-only evaluation; no repository mutation or production deployment
+**Goal:** Demonstrate a strict, fail-closed decision across required validation lanes.
 
-## Scenario
+## Policy `lab-v2`
 
-A fictional repository has four validation lanes: build, security, deployment validation and quality. Some lanes may be explicitly non-applicable to a change. The merge gate must normalize their states and produce one predictable decision.
+The local evaluator requires an explicit `policy_version` of `lab-v2`, a non-empty `changed_files` list of valid relative paths, and **exactly four lanes**: `build`, `security`, `deploy` and `quality`.
 
-## Policy
+Every required lane must be present. Missing, unknown, unexpected, malformed or unresolved lanes result in **FAIL**.
 
-Accepted terminal states:
+| State | Meaning | Decision |
+|---|---|---|
+| `PASS` | Required check succeeded | Accepted |
+| `FAIL` | Required check failed | Rejected |
+| `UNKNOWN` | Unrecognized/unknown state | Rejected |
+| `PENDING` | Incomplete final snapshot | Rejected |
+| `N/A` | Explicit synthetic policy exception | Only allowed for `deploy` on documentation-only changes |
 
-- `PASS` — required lane completed successfully.
-- `N/A` — policy explicitly determines that the lane does not apply.
+Documentation-only means that every declared changed path is `README.md`, `README.pt-BR.md`, or under `docs/`. The `build`, `security` and `quality` lanes cannot be exempted by this laboratory policy. Paths containing traversal components are rejected.
 
-Rejected states:
+## Reproduce
 
-- `FAIL` — required lane failed.
-- `UNKNOWN` — unexpected or unrecognized terminal state.
-- `PENDING` after the bounded wait expires.
-
-## Decision invariant
-
-> A pull request cannot receive a successful merge-gate decision unless every applicable required lane reaches an explicitly acceptable terminal state.
-
-## Test matrix
-
-| Test | Build | Security | Deploy | Quality | Expected |
-|---|---|---|---|---|---|
-| Positive | PASS | PASS | PASS | PASS | PASS |
-| Negative | PASS | FAIL | PASS | PASS | FAIL |
-| Explicit N/A | PASS | PASS | N/A | PASS | PASS |
-| Unknown | PASS | UNKNOWN | PASS | PASS | FAIL |
-| Timeout | PASS | PENDING | PASS | PASS | FAIL |
-
-## Local evaluator
-
-The included Python script reads a synthetic JSON state file and exits with:
-
-- `0` when the merge decision is PASS;
-- `1` when the gate fails closed.
-
-Run locally:
+Run commands from this lab directory:
 
 ```bash
-python3 gate.py evidence/positive.json
-python3 gate.py evidence/negative.json
+python3 gate.py evidence/positive.json           # PASS, exit 0
+python3 gate.py evidence/negative.json           # FAIL, exit 1
+python3 gate.py evidence/not-applicable.json     # PASS, exit 0
+python3 gate.py evidence/unknown.json            # FAIL, exit 1
+python3 -m unittest -v test_gate.py
 ```
 
-No network access, repository mutation or deployment occurs.
+The suite contains **17 tests**, including malformed input, incomplete lane sets, invalid exceptions, unsupported policy versions and unresolved states.
 
-## Evidence objective
+## Scope and limitations
 
-The useful evidence is not merely a green check. It is the combination of:
+This program is a **local deterministic evaluator**, not an end-to-end GitHub branch protection implementation. It does not fetch trusted PR changes, verify hosted job identities, authorize an exemption based on trusted GitHub metadata, or implement bounded polling. `PENDING` is rejected as an unresolved final snapshot. A real integration would need trusted workflow data, branch rules requiring the check, and end-to-end negative merge tests.
 
-1. policy version;
-2. normalized input states;
-3. deterministic decision;
-4. negative test proving failure behavior;
-5. explicit handling of N/A and unknown states.
-
-## Engineering lesson
-
-A CI gate is a security control only when its applicability, terminal states and failure behavior are deterministic and testable.
+See [VALIDATION.md](VALIDATION.md) for the regression matrix and the repository workflow for hosted test evidence.

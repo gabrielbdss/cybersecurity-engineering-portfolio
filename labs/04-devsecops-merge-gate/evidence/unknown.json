@@ -1,1 +1,1 @@
-{"policy_version":"lab-v1","lanes":{"build":"PASS","security":"UNKNOWN","deploy":"PASS","quality":"PASS"}}
+{"policy_version":"lab-v2","changed_files":["src/main.py"],"lanes":{"build":"PASS","security":"UNKNOWN","deploy":"PASS","quality":"PASS"}}
