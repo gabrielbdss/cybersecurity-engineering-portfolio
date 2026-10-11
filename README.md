@@ -104,7 +104,7 @@ flowchart LR
 ### 01 · Cloud-Native Incident Response
 Evidence preservation, timeline reconstruction, telemetry correlation, competing hypotheses and proportional containment.
 
-[Read the case study →](case-studies/01-cloud-native-incident-response/README.md)
+[Read the case study →](case-studies/01-cloud-native-incident-response/README.md) · [Sanitized professional report (PDF)](case-studies/01-cloud-native-incident-response/Cloud_Native_Incident_Response_Public_Portfolio.pdf)
 
 ### 02 · Cloud Security Baseline & Least Privilege
 Effective access, workload identity, cryptographic boundaries, data permissions and remediation with validation and rollback.
