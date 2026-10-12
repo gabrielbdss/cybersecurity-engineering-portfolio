@@ -75,3 +75,59 @@ jobs:
           set -euo pipefail
           python3 labs/01-cloud-incident-triage/triage.py > /dev/null
           python3 labs/02-cloud-least-privilege/review_access.py > /dev/null
+  validate-ai-action-boundary:
+    name: Validate AI action-boundary lab
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12"
+
+      - name: Check Python syntax
+        run: python3 -m compileall -q labs/03-ai-tool-authorization
+
+      - name: Run authorization regression tests
+        run: python3 -m unittest discover -s labs/03-ai-tool-authorization -p 'test_*.py' -v
+
+      - name: Run adversarial security tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 labs/03-ai-tool-authorization/review/adversarial_round1.py labs/03-ai-tool-authorization
+          python3 labs/03-ai-tool-authorization/review/adversarial_round2.py labs/03-ai-tool-authorization
+
+      - name: Verify all security scenarios
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 labs/03-ai-tool-authorization/demo.py --scenario ALL > /tmp/ai-action-all.json
+          python3 - <<'PY'
+          import json
+
+          with open("/tmp/ai-action-all.json", encoding="utf-8") as f:
+              data = json.load(f)
+
+          expected = {
+              "C01": 1, "C02": 0, "C03": 0, "C04": 0,
+              "C05": 0, "C06": 1, "C07": 0, "CONCURRENT": 1,
+          }
+
+          assert data["overall_verdict"] == "PASS"
+          assert len(data["results"]) == len(expected)
+          assert {r["scenario"] for r in data["results"]} == set(expected)
+
+          for result in data["results"]:
+              name = result["scenario"]
+              assert name in expected
+              assert result["verdict"] == "PASS"
+              assert result["total_mutations"] == expected[name]
+              print(f"{name}: PASS")
+
+          print("ALL SECURITY SCENARIOS: PASS")
+          PY

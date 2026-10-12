@@ -1,0 +1,25 @@
+test_01_contention_48_threads_15_rounds (__main__.SecurityRoundTwo.test_01_contention_48_threads_15_rounds) ... ok
+test_02_mixed_cross_tenant_and_authorized_same_id (__main__.SecurityRoundTwo.test_02_mixed_cross_tenant_and_authorized_same_id) ... ok
+test_03_concurrent_distinct_ids_are_not_spuriously_rejected (__main__.SecurityRoundTwo.test_03_concurrent_distinct_ids_are_not_spuriously_rejected) ... ok
+test_04_replayed_action_same_id_new_request_id_denied (__main__.SecurityRoundTwo.test_04_replayed_action_same_id_new_request_id_denied) ... ok
+test_05_failed_cross_tenant_does_not_consume_id (__main__.SecurityRoundTwo.test_05_failed_cross_tenant_does_not_consume_id) ... ok
+test_06_policy_timeout_does_not_consume_id (__main__.SecurityRoundTwo.test_06_policy_timeout_does_not_consume_id) ... ok
+test_07_context_from_another_tenant_denies_own_resource (__main__.SecurityRoundTwo.test_07_context_from_another_tenant_denies_own_resource) ... ok
+test_08_mismatched_stored_owner_rejected (__main__.SecurityRoundTwo.test_08_mismatched_stored_owner_rejected) ... ok
+test_09_unicode_homoglyph_resource_rejected (__main__.SecurityRoundTwo.test_09_unicode_homoglyph_resource_rejected) ... ok
+test_10_json_escaped_duplicate_top_level_key_rejected (__main__.SecurityRoundTwo.test_10_json_escaped_duplicate_top_level_key_rejected) ... ok
+test_11_oversized_json_string_denied (__main__.SecurityRoundTwo.test_11_oversized_json_string_denied) ... ok
+test_12_nested_arrays_objects_and_null_denied (__main__.SecurityRoundTwo.test_12_nested_arrays_objects_and_null_denied) ... ok
+test_13_invalid_ids_and_operations_denied (__main__.SecurityRoundTwo.test_13_invalid_ids_and_operations_denied) ... ok
+test_14_tainted_prompt_inside_comment_is_just_data (__main__.SecurityRoundTwo.test_14_tainted_prompt_inside_comment_is_just_data) ... ok
+test_15_malformed_policy_verdict_denied (__main__.SecurityRoundTwo.test_15_malformed_policy_verdict_denied) ... ok
+test_16_mutated_input_post_check_rejected_no_effect (__main__.SecurityRoundTwo.test_16_mutated_input_post_check_rejected_no_effect) ... ok
+test_17_defensive_copy_audit_and_state (__main__.SecurityRoundTwo.test_17_defensive_copy_audit_and_state) ... ok
+test_18_no_effects_from_delete_unauthorized_even_on_other_resource (__main__.SecurityRoundTwo.test_18_no_effects_from_delete_unauthorized_even_on_other_resource) ... ok
+test_19_valid_admin_delete_is_restricted_to_same_tenant (__main__.SecurityRoundTwo.test_19_valid_admin_delete_is_restricted_to_same_tenant) ... ok
+test_20_replay_across_two_principals_same_action_id (__main__.SecurityRoundTwo.test_20_replay_across_two_principals_same_action_id) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.266s
+
+OK

@@ -1,0 +1,14 @@
+{
+  "analyst-a": {
+    "tenant_id": "tenant-a",
+    "permissions": ["ticket.read", "ticket.comment"]
+  },
+  "admin-a": {
+    "tenant_id": "tenant-a",
+    "permissions": ["ticket.read", "ticket.comment", "ticket.delete"]
+  },
+  "analyst-b": {
+    "tenant_id": "tenant-b",
+    "permissions": ["ticket.read", "ticket.comment"]
+  }
+}

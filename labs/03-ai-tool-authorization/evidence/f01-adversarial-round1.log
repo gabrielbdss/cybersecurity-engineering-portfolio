@@ -1,0 +1,14 @@
+test_01_concurrent_same_id_32_workers_repeated_20_rounds (__main__.AdversarialReview.test_01_concurrent_same_id_32_workers_repeated_20_rounds) ... ok
+test_02_same_id_mixed_arguments_never_double_executes (__main__.AdversarialReview.test_02_same_id_mixed_arguments_never_double_executes) ... ok
+test_03_concurrent_distinct_ids_each_executes_once (__main__.AdversarialReview.test_03_concurrent_distinct_ids_each_executes_once) ... ok
+test_04_cross_tenant_flood_never_touches_other_tenant (__main__.AdversarialReview.test_04_cross_tenant_flood_never_touches_other_tenant) ... ok
+test_05_duplicate_nested_json_fields_fail_closed (__main__.AdversarialReview.test_05_duplicate_nested_json_fields_fail_closed) ... ok
+test_06_json_nan_fail_closed (__main__.AdversarialReview.test_06_json_nan_fail_closed) ... ok
+test_07_corrupt_stored_owner_must_fail_closed (__main__.AdversarialReview.test_07_corrupt_stored_owner_must_fail_closed) ... ok
+test_08_commit_exception_never_publishes_partial_state (__main__.AdversarialReview.test_08_commit_exception_never_publishes_partial_state) ... ok
+test_09_policy_returns_non_boolean_denied (__main__.AdversarialReview.test_09_policy_returns_non_boolean_denied) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.193s
+
+OK

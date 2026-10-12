@@ -1,0 +1,31 @@
+test_admin_cannot_delete_other_tenant (test_authorization.AuthorizationTests.test_admin_cannot_delete_other_tenant) ... ok
+test_allowed_admin_delete_same_tenant_only (test_authorization.AuthorizationTests.test_allowed_admin_delete_same_tenant_only) ... ok
+test_audit_records_immutable_snapshots_and_request_correlation (test_authorization.AuthorizationTests.test_audit_records_immutable_snapshots_and_request_correlation) ... ok
+test_c01_authorized_comment_exactly_once_and_only_target (test_authorization.AuthorizationTests.test_c01_authorized_comment_exactly_once_and_only_target) ... ok
+test_c02_unauthorized_delete_denied_with_zero_side_effects (test_authorization.AuthorizationTests.test_c02_unauthorized_delete_denied_with_zero_side_effects) ... ok
+test_c03_cross_tenant_comment_denied_and_all_resources_unchanged (test_authorization.AuthorizationTests.test_c03_cross_tenant_comment_denied_and_all_resources_unchanged) ... ok
+test_c04_override_instruction_rejected (test_authorization.AuthorizationTests.test_c04_override_instruction_rejected) ... ok
+test_c04_principal_spoof_is_rejected_and_trusted_identity_unchanged (test_authorization.AuthorizationTests.test_c04_principal_spoof_is_rejected_and_trusted_identity_unchanged) ... ok
+test_c05_toctou_action_swapped_after_policy (test_authorization.AuthorizationTests.test_c05_toctou_action_swapped_after_policy) ... ok
+test_c05_toctou_argument_swapped_after_policy (test_authorization.AuthorizationTests.test_c05_toctou_argument_swapped_after_policy) ... ok
+test_c05_toctou_resource_swapped_after_policy (test_authorization.AuthorizationTests.test_c05_toctou_resource_swapped_after_policy) ... ok
+test_c06_replay_changed_arguments_also_blocked (test_authorization.AuthorizationTests.test_c06_replay_changed_arguments_also_blocked) ... ok
+test_c06_replay_same_action_id_has_no_second_effect (test_authorization.AuthorizationTests.test_c06_replay_same_action_id_has_no_second_effect) ... ok
+test_c07_malformed_policy_response_fail_closed (test_authorization.AuthorizationTests.test_c07_malformed_policy_response_fail_closed) ... ok
+test_c07_policy_timeout_fail_closed (test_authorization.AuthorizationTests.test_c07_policy_timeout_fail_closed) ... ok
+test_concurrent_replay_single_process_no_double_execution (test_authorization.AuthorizationTests.test_concurrent_replay_single_process_no_double_execution) ... ok
+test_effect_isolation_on_allow_only_one_resource_changes (test_authorization.AuthorizationTests.test_effect_isolation_on_allow_only_one_resource_changes) ... ok
+test_fresh_instances_do_not_share_replay_ledger_or_tickets (test_authorization.AuthorizationTests.test_fresh_instances_do_not_share_replay_ledger_or_tickets) ... ok
+test_invalid_authority_fields_fail_closed (test_authorization.AuthorizationTests.test_invalid_authority_fields_fail_closed) ... ok
+test_invalid_comment_type_and_empty_comment_fail_closed (test_authorization.AuthorizationTests.test_invalid_comment_type_and_empty_comment_fail_closed) ... ok
+test_invalid_duplicate_json_keys_fail_closed (test_authorization.AuthorizationTests.test_invalid_duplicate_json_keys_fail_closed) ... ok
+test_invalid_json_syntax_fail_closed (test_authorization.AuthorizationTests.test_invalid_json_syntax_fail_closed) ... ok
+test_invalid_missing_required_field_fail_closed (test_authorization.AuthorizationTests.test_invalid_missing_required_field_fail_closed) ... ok
+test_invalid_unexpected_array_fail_closed (test_authorization.AuthorizationTests.test_invalid_unexpected_array_fail_closed) ... ok
+test_server_context_missing_fails_closed (test_authorization.AuthorizationTests.test_server_context_missing_fails_closed) ... ok
+test_unknown_ticket_denied (test_authorization.AuthorizationTests.test_unknown_ticket_denied) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.010s
+
+OK

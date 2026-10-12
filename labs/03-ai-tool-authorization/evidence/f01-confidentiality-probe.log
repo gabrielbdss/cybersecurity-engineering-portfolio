@@ -1,0 +1,6 @@
+test_public_response_must_not_include_other_tenant_ticket (__main__.PublicBoundaryConfidentiality.test_public_response_must_not_include_other_tenant_ticket) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
