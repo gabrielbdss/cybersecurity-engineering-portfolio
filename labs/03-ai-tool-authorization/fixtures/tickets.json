@@ -1,0 +1,20 @@
+{
+  "tenant-a/ticket-101": {
+    "tenant_id": "tenant-a",
+    "title": "Synthetic review request",
+    "status": "open",
+    "comments": []
+  },
+  "tenant-a/ticket-102": {
+    "tenant_id": "tenant-a",
+    "title": "Synthetic secondary request",
+    "status": "open",
+    "comments": ["Existing synthetic note"]
+  },
+  "tenant-b/ticket-202": {
+    "tenant_id": "tenant-b",
+    "title": "Independent tenant case",
+    "status": "open",
+    "comments": []
+  }
+}

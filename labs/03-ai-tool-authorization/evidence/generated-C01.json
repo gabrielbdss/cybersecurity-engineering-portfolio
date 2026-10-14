@@ -1,0 +1,134 @@
+{
+  "final_state": {
+    "tenant-a/ticket-101": {
+      "comments": [
+        "Synthetic review"
+      ],
+      "status": "open",
+      "tenant_id": "tenant-a",
+      "title": "Synthetic review request"
+    },
+    "tenant-a/ticket-102": {
+      "comments": [
+        "Existing synthetic note"
+      ],
+      "status": "open",
+      "tenant_id": "tenant-a",
+      "title": "Synthetic secondary request"
+    },
+    "tenant-b/ticket-202": {
+      "comments": [],
+      "status": "open",
+      "tenant_id": "tenant-b",
+      "title": "Independent tenant case"
+    }
+  },
+  "initial_state": {
+    "tenant-a/ticket-101": {
+      "comments": [],
+      "status": "open",
+      "tenant_id": "tenant-a",
+      "title": "Synthetic review request"
+    },
+    "tenant-a/ticket-102": {
+      "comments": [
+        "Existing synthetic note"
+      ],
+      "status": "open",
+      "tenant_id": "tenant-a",
+      "title": "Synthetic secondary request"
+    },
+    "tenant-b/ticket-202": {
+      "comments": [],
+      "status": "open",
+      "tenant_id": "tenant-b",
+      "title": "Independent tenant case"
+    }
+  },
+  "model": "single-process shared-lock synthetic target",
+  "public_responses": [
+    {
+      "action_id": "c01",
+      "decision": "ALLOW",
+      "executed": true,
+      "mutation_count_delta": 1,
+      "reason_code": "AUTHORIZED",
+      "request_id": "req-c01"
+    }
+  ],
+  "records": [
+    {
+      "action_id": "c01",
+      "decision": "ALLOW",
+      "executed": true,
+      "mutation_count_delta": 1,
+      "reason_code": "AUTHORIZED",
+      "request_id": "req-c01",
+      "state_after": {
+        "tenant-a/ticket-101": {
+          "comments": [
+            "Synthetic review"
+          ],
+          "status": "open",
+          "tenant_id": "tenant-a",
+          "title": "Synthetic review request"
+        },
+        "tenant-a/ticket-102": {
+          "comments": [
+            "Existing synthetic note"
+          ],
+          "status": "open",
+          "tenant_id": "tenant-a",
+          "title": "Synthetic secondary request"
+        },
+        "tenant-b/ticket-202": {
+          "comments": [],
+          "status": "open",
+          "tenant_id": "tenant-b",
+          "title": "Independent tenant case"
+        }
+      },
+      "state_before": {
+        "tenant-a/ticket-101": {
+          "comments": [],
+          "status": "open",
+          "tenant_id": "tenant-a",
+          "title": "Synthetic review request"
+        },
+        "tenant-a/ticket-102": {
+          "comments": [
+            "Existing synthetic note"
+          ],
+          "status": "open",
+          "tenant_id": "tenant-a",
+          "title": "Synthetic secondary request"
+        },
+        "tenant-b/ticket-202": {
+          "comments": [],
+          "status": "open",
+          "tenant_id": "tenant-b",
+          "title": "Independent tenant case"
+        }
+      },
+      "target_after": {
+        "comments": [
+          "Synthetic review"
+        ],
+        "status": "open",
+        "tenant_id": "tenant-a",
+        "title": "Synthetic review request"
+      },
+      "target_before": {
+        "comments": [],
+        "status": "open",
+        "tenant_id": "tenant-a",
+        "title": "Synthetic review request"
+      },
+      "trusted_principal_id": "analyst-a",
+      "trusted_tenant_id": "tenant-a"
+    }
+  ],
+  "scenario": "C01",
+  "total_mutations": 1,
+  "verdict": "PASS"
+}
