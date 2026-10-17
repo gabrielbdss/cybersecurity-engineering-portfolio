@@ -12,7 +12,7 @@
 
 ## Professional work (non-reproducible public evidence)
 
-- **Cloud & AI infrastructure audit:** [public reconstructed case](../case-studies/07-cloud-ai-continuity-audit/README.md), [11-section illustrative report](../case-studies/07-cloud-ai-continuity-audit/PUBLIC_REPORT.html). Professional assessment was real; technical data is fictional. Internal primary evidence is not available for public reproduction.
+- **Cloud & AI infrastructure audit:** [public reconstructed case](../case-studies/07-cloud-ai-continuity-audit/README.md), [11-section illustrative report](../case-studies/07-cloud-ai-continuity-audit/PUBLIC_REPORT.md). Professional assessment was real; technical data is fictional. Internal primary evidence is not available for public reproduction.
 - **Cloud incident response:** [sanitized professional study](../case-studies/01-cloud-native-incident-response/README.md) and [publication scope](../case-studies/01-cloud-native-incident-response/PUBLICATION_SCOPE.md). Do not treat illustrative timeline or observations as raw provider logs.
 - **AppSec:** [Project Lumen](../case-studies/04-ai-security-red-teaming/PROJECT_LUMEN_ASSESSMENT.md) documents actual SAST/SCA and directed source review with private evidence withheld.
 
