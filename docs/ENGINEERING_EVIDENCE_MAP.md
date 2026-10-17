@@ -10,6 +10,12 @@
 | AI Security | [AI Action Boundary lab](../labs/03-ai-tool-authorization/README.md), [threat model](../labs/03-ai-tool-authorization/THREAT_MODEL.md), [F-01 verification](../labs/03-ai-tool-authorization/evidence/F01_VERIFICATION.md) | In-memory tool authorization boundary, denial, replay and concurrency under specified tests | No real model integration, identity provider, multi-process durability or external independent sign-off |
 | Security Governance | [Evidence-first method](../methodology/evidence-first-production-safe.md), [publication policy](../SECURITY.md), [incident response tabletop](../case-studies/05-incident-response-playbook/TABLETOP_EXERCISE.md) | Scope, decision authority, limits and synthetic response decisions are documented | Documentation alone does not prove operational readiness |
 
+## Professional work (non-reproducible public evidence)
+
+- **Cloud & AI infrastructure audit:** [public reconstructed case](../case-studies/07-cloud-ai-continuity-audit/README.md), [11-section illustrative report](../case-studies/07-cloud-ai-continuity-audit/PUBLIC_REPORT.html). Professional assessment was real; technical data is fictional. Internal primary evidence is not available for public reproduction.
+- **Cloud incident response:** [sanitized professional study](../case-studies/01-cloud-native-incident-response/README.md) and [publication scope](../case-studies/01-cloud-native-incident-response/PUBLICATION_SCOPE.md). Do not treat illustrative timeline or observations as raw provider logs.
+- **AppSec:** [Project Lumen](../case-studies/04-ai-security-red-teaming/PROJECT_LUMEN_ASSESSMENT.md) documents actual SAST/SCA and directed source review with private evidence withheld.
+
 ## Reviewer checklist
 
 1. Choose the artifact and reproduce its local test command.
