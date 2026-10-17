@@ -8,7 +8,7 @@
 
 ![Portfolio CI](https://github.com/gabrielbdss/cybersecurity-engineering-portfolio/actions/workflows/portfolio-ci.yml/badge.svg)
 
-[Português (Brasil)](README.pt-BR.md) · [Portfolio Index](PORTFOLIO_INDEX.md) · [Learning Path](LEARNING_PATH.md) · [Methodology](methodology/evidence-first-production-safe.md) · [Security & Confidentiality](SECURITY.md)
+[Português (Brasil)](README.pt-BR.md) · [Portfolio Index](PORTFOLIO_INDEX.md) · [Engineering Evidence Map](docs/ENGINEERING_EVIDENCE_MAP.md) · [Learning Path](LEARNING_PATH.md) · [Methodology](methodology/evidence-first-production-safe.md) · [Security & Confidentiality](SECURITY.md)
 
 </div>
 
