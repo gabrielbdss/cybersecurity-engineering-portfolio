@@ -149,7 +149,7 @@ Dependency presence, advisory applicability, reachability reasoning and remediat
 ### 07 · Cloud & AI Infrastructure Security Audit
 **Professional read-only security assessment, with fully fictional public examples.** Evidence reconciliation, model-consumer attribution limits, build/runtime traceability, observability and safe migration governance.
 
-[Read the case study →](case-studies/07-cloud-ai-continuity-audit/README.md) · [View reconstructed 11-section report →](case-studies/07-cloud-ai-continuity-audit/PUBLIC_REPORT.html)
+[Read the case study →](case-studies/07-cloud-ai-continuity-audit/README.md) · [View reconstructed 11-section report →](case-studies/07-cloud-ai-continuity-audit/PUBLIC_REPORT.md)
 
 ## Hands-on security labs
 
