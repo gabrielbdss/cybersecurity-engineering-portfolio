@@ -1,0 +1,3 @@
+LAB_CANARY_EXPECTED_DETECTION_98765432
+This string is a deliberately non-secret, fictional Gitleaks test marker.
+This file is present only in the unmerged negative-test branch.
