@@ -69,7 +69,7 @@ As atividades descritas abaixo foram **realizadas em ambientes organizacionais r
 4. [AI Security & Red Teaming](case-studies/04-ai-security-red-teaming/README.md) — [assessment AppSec real e anonimizado — Projeto Lumen](case-studies/04-ai-security-red-teaming/PROJECT_LUMEN_ASSESSMENT.md)
 5. [Security Incident Response Playbook](case-studies/05-incident-response-playbook/README.md)
 6. [Dependency Vulnerability Triage](case-studies/06-dependency-vulnerability-triage/README.md)
-7. [Cloud & AI Infrastructure Security Audit](case-studies/07-cloud-ai-continuity-audit/README.md) — [relatório público reconstruído de 11 seções](case-studies/07-cloud-ai-continuity-audit/PUBLIC_REPORT.html)
+7. [Cloud & AI Infrastructure Security Audit](case-studies/07-cloud-ai-continuity-audit/README.md) — [relatório público reconstruído de 11 seções](case-studies/07-cloud-ai-continuity-audit/PUBLIC_REPORT.md)
 
 ## Hands-on labs
 
