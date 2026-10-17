@@ -40,11 +40,11 @@ My work is organized around traceable evidence: define scope and authorization, 
 | Runnable local security tools | **3** |
 | Merge-gate regression tests | **17** |
 | Incident-triage regression tests | **14** |
-| Least-privilege regression tests | **7** |
-| Total runnable Python unit tests | **38** |
-| External runtime dependencies for the tools | **0** |
+| Cloud-security regression tests (least privilege + serverless) | **18** |
+| Runnable Python unit tests (excluding supplemental adversarial runners) | **91** |
+| External runtime dependencies for local Python tools | **0** |
 
-These numbers describe inspectable artifacts in this repository, not private employer work.
+These numbers describe inspectable artifacts in this repository, not private employer work. CI executes 17 merge-gate, 14 incident-triage, 18 cloud-security and 31 AI-authorization unittest cases, plus 9 + 20 supplemental adversarial cases. The source-only dependency-triage exercise does not claim an executable scanner.
 
 **Additional executable evidence:** [Cloud Incident Triage](labs/01-cloud-incident-triage/README.md) correlates fictional JSONL telemetry; [Cloud Least Privilege](labs/02-cloud-least-privilege/README.md) compares synthetic declared grants with workload requirements. Both use local-only Python scripts and tests, with no cloud credentials.
 
