@@ -41,7 +41,7 @@ My work is organized around traceable evidence: define scope and authorization, 
 | Merge-gate regression tests | **17** |
 | Incident-triage regression tests | **14** |
 | Cloud-security regression tests (least privilege + serverless) | **18** |
-| Runnable Python unit tests (excluding supplemental adversarial runners) | **91** |
+| Runnable Python unit tests (excluding supplemental adversarial runners) | **80** |
 | External runtime dependencies for local Python tools | **0** |
 
 These numbers describe inspectable artifacts in this repository, not private employer work. CI executes 17 merge-gate, 14 incident-triage, 18 cloud-security and 31 AI-authorization unittest cases, plus 9 + 20 supplemental adversarial cases. The source-only dependency-triage exercise does not claim an executable scanner.
