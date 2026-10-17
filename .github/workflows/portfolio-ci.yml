@@ -27,6 +27,26 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
+      # Temporary negative validation on an unmerged throwaway PR only.
+      # The canary is not a credential; created solely on the CI runner.
+      - name: Negative scanner validation - reject synthetic canary
+        shell: bash
+        run: |
+          set -euo pipefail
+          scanner="$(find /tmp -type f -path '*/gitleaks-*/gitleaks' -print -quit)"
+          test -n "$scanner" && test -x "$scanner"
+          scratch="$(mktemp -d)"
+          trap 'rm -rf "$scratch"' EXIT
+          mkdir "$scratch/scan"
+          printf '%s\n' 'LAB_CANARY_EXPECTED_DETECTION_98765432' > "$scratch/scan/canary.txt"
+          cat > "$scratch/synthetic-rule.toml" <<'TOML'
+          [[rules]]
+          id = "lab-canary"
+          description = "Controlled detection proof; not a credential"
+          regex = '''LAB_CANARY_EXPECTED_DETECTION_[0-9]{8}'''
+          TOML
+          "$scanner" detect --no-git --source "$scratch/scan" --config "$scratch/synthetic-rule.toml" --redact --exit-code 2
+
       - name: Set up Python
         uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5 (verified SHA)
         with:
