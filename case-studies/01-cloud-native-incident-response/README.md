@@ -1,6 +1,6 @@
 # Case Study 01 — Cloud-Native Incident Response
 
-> **Sanitized reference case.** Identifiers and operational evidence are generalized or synthetic; this is not an internal incident report.
+> **Professional incident-response work, sanitized public reconstruction.** The author performed security investigation in an actual organizational cloud context. The published scenario, identifiers and operational evidence are generalized or synthetic; this is **not** the original internal incident record and does not prove an intrusion.
 
 ## Publication-ready PDF case study
 
