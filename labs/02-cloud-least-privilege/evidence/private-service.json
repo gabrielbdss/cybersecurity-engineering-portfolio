@@ -1,0 +1,7 @@
+{
+  "service": "example-internal-api",
+  "runtime_service_account": "runtime@fictional-lab.iam.gserviceaccount.com",
+  "ingress": "internal",
+  "invokers": ["serviceAccount:caller@fictional-lab.iam.gserviceaccount.com"],
+  "invoker_iam_check_enabled": true
+}

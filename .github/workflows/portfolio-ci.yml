@@ -19,6 +19,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4 (verified SHA)
+        with:
+          fetch-depth: 0 # Gitleaks requires commit history for its PR diff range
+
+      - name: Scan repository for leaked secrets (Gitleaks)
+        uses: gitleaks/gitleaks-action@e0c47f4f8be36e29cdc102c57e68cb5cbf0e8d1e # v3, pinned commit
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
 
       - name: Set up Python
         uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5 (verified SHA)
@@ -68,6 +75,8 @@ jobs:
         run: python3 -m compileall -q labs
       - name: Incident triage regression tests
         run: python3 -m unittest discover -s labs/01-cloud-incident-triage -p 'test_*.py' -v
+      - name: Validate synthetic private serverless boundary
+        run: python3 -m unittest discover -s labs/02-cloud-least-privilege -p 'test_review_serverless.py' -v
       - name: Least privilege regression tests
         run: python3 -m unittest discover -s labs/02-cloud-least-privilege -p 'test_*.py' -v
       - name: Smoke test local analyzers
