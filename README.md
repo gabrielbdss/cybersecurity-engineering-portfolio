@@ -35,7 +35,7 @@ My work is organized around traceable evidence: define scope and authorization, 
 
 | Evidence | Current repository |
 |---|---:|
-| Security engineering case studies | **6** |
+| Security engineering case studies | **7** |
 | Hands-on synthetic labs | **5** |
 | Runnable local security tools | **3** |
 | Merge-gate regression tests | **17** |
@@ -102,10 +102,22 @@ flowchart LR
 **INFERRED** — supported indirectly, but not directly demonstrated.  
 **UNVERIFIED** — not demonstrated with available evidence.
 
+## Selected professional work · Sanitized case studies
+
+The assessments below stem from **work carried out in real organizational environments**. Published reports use reconstructed or generalized examples and **do not expose private operational evidence**.
+
+| Focus | Professional work | Public evidence |
+|---|---|---|
+| **Cloud Security / AI Governance** | Read-only audit of AI service usage, observability, build/runtime traceability and migration decision risks | [Cloud & AI Infrastructure Security Audit — reconstructed report](case-studies/07-cloud-ai-continuity-audit/README.md) |
+| **Incident Response** | Investigation of security-relevant cloud events, evidence correlation and bounded conclusions | [Cloud-Native Incident Response — sanitized professional case](case-studies/01-cloud-native-incident-response/README.md) |
+| **Application Security** | Real source-based review using SAST, dependency assessment and manual authorization analysis | [Project Lumen — anonymized assessment](case-studies/04-ai-security-red-teaming/PROJECT_LUMEN_ASSESSMENT.md) |
+
+**Evidence boundary:** The work was real; illustrative datasets, systems and diagrams in reconstructed reports are **fictional**. No employer sign-off, production fix or broad security assurance is implied.
+
 ## Featured case studies
 
 ### 01 · Cloud-Native Incident Response
-Evidence preservation, timeline reconstruction, telemetry correlation, competing hypotheses and proportional containment.
+**Professional investigation, sanitized public reconstruction.** Evidence preservation, timeline reconstruction, telemetry correlation, competing hypotheses and proportional containment.
 
 [Read the case study →](case-studies/01-cloud-native-incident-response/README.md) · [Sanitized professional report (PDF)](case-studies/01-cloud-native-incident-response/Cloud_Native_Incident_Response_Public_Portfolio.pdf)
 
@@ -133,6 +145,11 @@ Evidence preservation, escalation, proportional containment, recovery validation
 Dependency presence, advisory applicability, reachability reasoning and remediation validation without overstating exploitability.
 
 [Read the case study →](case-studies/06-dependency-vulnerability-triage/README.md)
+
+### 07 · Cloud & AI Infrastructure Security Audit
+**Professional read-only security assessment, with fully fictional public examples.** Evidence reconciliation, model-consumer attribution limits, build/runtime traceability, observability and safe migration governance.
+
+[Read the case study →](case-studies/07-cloud-ai-continuity-audit/README.md) · [View reconstructed 11-section report →](case-studies/07-cloud-ai-continuity-audit/PUBLIC_REPORT.md)
 
 ## Hands-on security labs
 
