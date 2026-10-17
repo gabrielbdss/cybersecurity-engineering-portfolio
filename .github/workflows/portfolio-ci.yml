@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4 (verified SHA)
+        with:
+          fetch-depth: 0 # Gitleaks requires commit history for its PR diff range
 
       - name: Scan repository for leaked secrets (Gitleaks)
         uses: gitleaks/gitleaks-action@e0c47f4f8be36e29cdc102c57e68cb5cbf0e8d1e # v3, pinned commit
