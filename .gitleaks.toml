@@ -1,0 +1,7 @@
+[extend]
+useDefault = true
+
+[[rules]]
+id = "controlled-lab-canary"
+description = "Synthetic marker for negative CI regression; not a real credential"
+regex = '''LAB_CANARY_EXPECTED_DETECTION_[0-9]{8}'''
