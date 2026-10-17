@@ -12,7 +12,7 @@ Start with the operating methodology, then review how it is applied across cloud
 3. [Deterministic DevSecOps Merge Gate](case-studies/03-devsecops-merge-gate/README.md)
 
 ### Professional assessments — real work, sanitized public reconstruction
-1. [Cloud & AI Infrastructure Security Audit](case-studies/07-cloud-ai-continuity-audit/README.md) — real READ ONLY audit; [11-section public reconstruction](case-studies/07-cloud-ai-continuity-audit/PUBLIC_REPORT.html) contains only fictional technical examples.
+1. [Cloud & AI Infrastructure Security Audit](case-studies/07-cloud-ai-continuity-audit/README.md) — real READ ONLY audit; [11-section public reconstruction](case-studies/07-cloud-ai-continuity-audit/PUBLIC_REPORT.md) contains only fictional technical examples.
 2. [Cloud-Native Incident Response](case-studies/01-cloud-native-incident-response/README.md) — investigation conducted in a professional cloud context, presented with generalized/synthetic evidence.
 3. [Project Lumen AppSec Assessment](case-studies/04-ai-security-red-teaming/PROJECT_LUMEN_ASSESSMENT.md) — real code review, publicly anonymized, private evidence withheld.
 
@@ -36,7 +36,7 @@ Start with the operating methodology, then review how it is applied across cloud
 | AI Security & Red Teaming | AI Security | Case study | Controlled synthetic laboratory |
 | Project Lumen assessment | Application Security | Sanitized case + 14-page PDF | Real work described, primary private evidence withheld |
 | Incident Response Playbook | Incident Response | Operational reference | Vendor-neutral |
-| Cloud & AI Infrastructure Audit | Cloud / AI Governance | Reconstructed [11-section HTML](case-studies/07-cloud-ai-continuity-audit/PUBLIC_REPORT.html) | Real read-only audit; fully fictional technical examples, not the private report |
+| Cloud & AI Infrastructure Audit | Cloud / AI Governance | Reconstructed [11-section Markdown](case-studies/07-cloud-ai-continuity-audit/PUBLIC_REPORT.md) | Real read-only audit; fully fictional technical examples, not the private report |
 | Security Case Study Template | Governance | Template | Reusable public template |
 
 ## Study and interview preparation
