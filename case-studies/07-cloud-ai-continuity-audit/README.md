@@ -6,7 +6,7 @@
 
 ## Read the report
 
-[**View the complete public report (11 sections; HTML)**](PUBLIC_REPORT.html)
+[**View the complete public report (11 sections; HTML)**](PUBLIC_REPORT.md)
 
 The original private report was **not** copied or redacted into this repository. The public study independently reconstructs the methods, questions and decision framework with **invented** identifiers, architecture, numerical metrics, traffic proportions, model names and risk examples. No diagram depicts actual employer infrastructure.
 
