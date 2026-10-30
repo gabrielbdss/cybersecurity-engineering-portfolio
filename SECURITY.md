@@ -45,3 +45,9 @@ Public portfolio notes may summarize participation and generic methodology in a 
 A public participation summary should clearly distinguish challenge completion from ranking, prize eligibility, certification and organizer endorsement. Any assistance (including conversational AI) should be disclosed honestly. A manual review of the event's rules and any organizer permissions is required before a solution-level publication.
 
 See [Operation Cymbal: Cold Room disclosure gate](case-studies/08-operation-cymbal-cold-room/DISCLOSURE.md).
+
+## Automated assurance
+
+The public repository runs a Publication Gate, Gitleaks, Python CodeQL, dependency delta review and a read-only weekly security overview. These controls cannot guarantee absence of secrets, spoilers or unrecognized vulnerabilities. Manual review and third-party disclosure permission remain mandatory.
+
+See [Security Assurance — Workflow Matrix and Limits](docs/SECURITY_ASSURANCE.md).
