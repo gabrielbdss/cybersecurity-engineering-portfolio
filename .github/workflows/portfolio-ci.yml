@@ -38,6 +38,12 @@ jobs:
       - name: Check Markdown links
         run: python3 scripts/check_portfolio_links.py
 
+      - name: Publication Gate - positive and negative regression tests
+        run: python3 -m unittest discover -s scripts -p 'test_publication_gate.py' -v
+
+      - name: Publication Gate - deny sensitive files in public portfolio
+        run: python3 scripts/publication_gate.py
+
       - name: Run regression tests
         working-directory: labs/04-devsecops-merge-gate
         run: python3 -m unittest -v test_gate.py
