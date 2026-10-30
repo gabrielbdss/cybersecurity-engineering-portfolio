@@ -35,7 +35,7 @@ My work is organized around traceable evidence: define scope and authorization, 
 
 | Evidence | Current repository |
 |---|---:|
-| Security engineering case studies | **7** |
+| Security engineering case studies | **8** |
 | Hands-on synthetic labs | **5** |
 | Runnable local security tools | **3** |
 | Merge-gate regression tests | **17** |
@@ -151,6 +151,11 @@ Dependency presence, advisory applicability, reachability reasoning and remediat
 
 [Read the case study →](case-studies/07-cloud-ai-continuity-audit/README.md) · [View reconstructed 11-section report →](case-studies/07-cloud-ai-continuity-audit/PUBLIC_REPORT.md)
 
+### 08 · Operation Cymbal: Cold Room — Investigative CTF
+**Google Cloud Security Community × Hack The Box (October 2026).** Platform-recorded completion: **3/3 scenarios, 18/18 flags**. A read-only, simulated investigation covering endpoint, identity, cloud, threat hunting and AI-security telemetry. The public case study intentionally omits flags, solution routes, indicators and raw evidence while disclosure permission remains unverified. Conversational AI was used to support reasoning and documentation; participation is **not an official Google Cloud certification or an employer assessment**.
+
+[Read the spoiler-free case study →](case-studies/08-operation-cymbal-cold-room/README.md) · [Publication controls →](case-studies/08-operation-cymbal-cold-room/DISCLOSURE.md)
+
 ## Hands-on security labs
 
 | Lab | Demonstrates | Artifacts |
@@ -177,7 +182,7 @@ Dependency presence, advisory applicability, reachability reasoning and remediat
 ```text
 .
 ├── .github/workflows/ # Automated portfolio validation
-├── case-studies/      # Vendor-neutral security engineering cases
+├── case-studies/      # Security engineering cases + disclosure-safe CTF overview
 ├── labs/              # Reproducible synthetic exercises
 ├── methodology/       # Evidence First / Production Safe
 ├── templates/         # Reusable security documentation

@@ -18,7 +18,7 @@ Meu trabalho segue uma disciplina baseada em evidências: definir escopo e autor
 
 | Evidência pública | Repositório atual |
 |---|---:|
-| Case studies de engenharia de segurança | **7** |
+| Case studies de engenharia de segurança | **8** |
 | Labs sintéticos hands-on | **5** |
 | Ferramentas de segurança executáveis localmente | **3** |
 | Testes de regressão do merge gate | **17** |
@@ -70,6 +70,13 @@ As atividades descritas abaixo foram **realizadas em ambientes organizacionais r
 5. [Security Incident Response Playbook](case-studies/05-incident-response-playbook/README.md)
 6. [Dependency Vulnerability Triage](case-studies/06-dependency-vulnerability-triage/README.md)
 7. [Cloud & AI Infrastructure Security Audit](case-studies/07-cloud-ai-continuity-audit/README.md) — [relatório público reconstruído de 11 seções](case-studies/07-cloud-ai-continuity-audit/PUBLIC_REPORT.md)
+8. [Operation Cymbal: Cold Room — CTF Google Cloud Security Community × Hack The Box](case-studies/08-operation-cymbal-cold-room/README.pt-BR.md) — 3/3 cenários, 18/18 flags, [apresentação sem spoilers e com controle de divulgação](case-studies/08-operation-cymbal-cold-room/DISCLOSURE.md)
+
+## Destaque · Operation Cymbal: Cold Room (CTF)
+
+**Google Cloud Security Community × Hack The Box · outubro de 2026.** Conclusão registrada pela plataforma: **18/18 flags e 3/3 cenários**, em ambiente de investigação simulado. Exercício de correlação de telemetria de endpoint, identidade, cloud, SIEM e AI Security. Houve assistência conversacional de IA na interpretação das evidências e na documentação; o registro não representa certificação Google, validação de independência ou auditoria da FoundLab.
+
+[Estudo de caso público sem soluções](case-studies/08-operation-cymbal-cold-room/README.pt-BR.md) · [Regras de divulgação](case-studies/08-operation-cymbal-cold-room/DISCLOSURE.md)
 
 ## Hands-on labs
 
