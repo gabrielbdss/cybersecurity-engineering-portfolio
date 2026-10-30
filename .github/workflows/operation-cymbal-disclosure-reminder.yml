@@ -62,4 +62,5 @@ jobs:
           This workflow does not publish material, change repository visibility or merge changes.
           EOF
 
-          gh issue create --title "$title" --body-file "$RUNNER_TEMP/operation-cymbal-review.md"
+          owner="${GH_REPO%%/*}"
+          gh issue create --title "$title" --body-file "$RUNNER_TEMP/operation-cymbal-review.md" --assignee "$owner"
