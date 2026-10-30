@@ -19,11 +19,13 @@ Start with the operating methodology, then review how it is applied across cloud
 ### Incident Response
 1. [Cloud-Native Incident Response](case-studies/01-cloud-native-incident-response/README.md)
 2. [Security Incident Response Playbook](case-studies/05-incident-response-playbook/README.md)
+3. [Operation Cymbal: Cold Room](case-studies/08-operation-cymbal-cold-room/README.md) — **18/18 flags**, simulated HTB investigation; spoiler-free participation summary, not a professional client incident.
 
 ### Application & AI Security
 1. [Project Lumen — real AppSec assessment, anonymized](case-studies/04-ai-security-red-teaming/PROJECT_LUMEN_ASSESSMENT.md) ([PDF](case-studies/04-ai-security-red-teaming/Projeto_Lumen_AppSec_Assessment_Real_Sanitizado.pdf))
 2. [AI Security & Red Teaming](case-studies/04-ai-security-red-teaming/README.md) — synthetic model and tool authorization laboratory
 3. [Dependency Vulnerability Triage](case-studies/06-dependency-vulnerability-triage/README.md)
+4. [Operation Cymbal: Cold Room (AI Misuse track)](case-studies/08-operation-cymbal-cold-room/README.md) — controlled CTF participation; solution details withheld.
 
 ## Portfolio map
 
@@ -37,6 +39,7 @@ Start with the operating methodology, then review how it is applied across cloud
 | Project Lumen assessment | Application Security | Sanitized case + 14-page PDF | Real work described, primary private evidence withheld |
 | Incident Response Playbook | Incident Response | Operational reference | Vendor-neutral |
 | Cloud & AI Infrastructure Audit | Cloud / AI Governance | Reconstructed [11-section Markdown](case-studies/07-cloud-ai-continuity-audit/PUBLIC_REPORT.md) | Real read-only audit; fully fictional technical examples, not the private report |
+| Operation Cymbal: Cold Room | Threat Hunting / IR / AI Security | [Spoiler-free case study](case-studies/08-operation-cymbal-cold-room/README.md) | Simulated event participation (3/3 scenarios, 18/18 flags), assistance disclosed; challenge specifics withheld |
 | Security Case Study Template | Governance | Template | Reusable public template |
 
 ## Study and interview preparation
