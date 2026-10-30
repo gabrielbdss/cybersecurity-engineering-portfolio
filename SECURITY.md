@@ -37,3 +37,11 @@ Before publication, verify:
 - no secret, private project detail or non-public finding is present.
 
 When in doubt, do not publish the sensitive detail.
+
+## Active competitions and third-party training content
+
+Public portfolio notes may summarize participation and generic methodology in a simulated CTF, but **challenge solutions, flags, answer-bearing indicators, raw telemetry, event-specific query strings and private forensic write-ups are withheld** while disclosure rights are unverified. Event closure alone is **not** authorization to disclose.
+
+A public participation summary should clearly distinguish challenge completion from ranking, prize eligibility, certification and organizer endorsement. Any assistance (including conversational AI) should be disclosed honestly. A manual review of the event's rules and any organizer permissions is required before a solution-level publication.
+
+See [Operation Cymbal: Cold Room disclosure gate](case-studies/08-operation-cymbal-cold-room/DISCLOSURE.md).
