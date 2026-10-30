@@ -90,6 +90,12 @@ As atividades descritas abaixo foram **realizadas em ambientes organizacionais r
 
 O [Lab 04](labs/04-devsecops-merge-gate/README.md) contém código executável, fixtures positivas e negativas e testes unitários. O workflow público executa 80 testes unitários, uma checagem sintática e verificação de links locais. A proteção obrigatória da branch é feita pelo ruleset do GitHub, validado com uma [PR negativa](case-studies/03-devsecops-merge-gate/BRANCH_PROTECTION_VALIDATION.md).
 
+## Controles automatizados de segurança
+
+O portfólio público conta agora com **CodeQL Python**, **Dependency Review nas PRs**, **Publication Gate** e **resumo semanal somente leitura**, além dos controles existentes de Gitleaks, testes e validação de links. O Publication Gate também foi integrado ao job de CI utilizado na governança de merge.
+
+[Visão técnica dos workflows e suas limitações](docs/SECURITY_ASSURANCE.md) · [Execuções GitHub Actions](https://github.com/gabrielbdss/cybersecurity-engineering-portfolio/actions)
+
 ## Confidencialidade
 
 Os laboratórios são **sintéticos ou controlados**. Alguns estudos de caso também apresentam **atividades técnicas realmente executadas em avaliações privadas**, com resultados gerais anonimizados e sem divulgação de evidências, configurações ou arquitetura interna. Não publico projetos privados, identidade de clientes, arquitetura interna, tickets, logs reais, credenciais, código proprietário, identificadores operacionais ou findings não públicos.
