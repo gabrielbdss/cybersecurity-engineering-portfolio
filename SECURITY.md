@@ -48,6 +48,6 @@ See [Operation Cymbal: Cold Room disclosure gate](case-studies/08-operation-cymb
 
 ## Automated assurance
 
-The public repository runs a Publication Gate, Gitleaks, an existing GitHub-managed CodeQL Default Setup and a read-only weekly security overview. Dependency Review remains a **prepared template, not an active check**, pending activation of the GitHub Dependency graph. These controls cannot guarantee absence of secrets, spoilers or unrecognized vulnerabilities. Manual review and third-party disclosure permission remain mandatory.
+The public repository runs a Publication Gate, Gitleaks, an existing GitHub-managed CodeQL Default Setup and a read-only weekly security overview. Dependency Review is now configured as a pull-request workflow following the owner's activation of the GitHub Dependency graph; its operational status is determined by actual PR checks. These controls cannot guarantee absence of secrets, spoilers or unrecognized vulnerabilities. Manual review and third-party disclosure permission remain mandatory.
 
 See [Security Assurance — Workflow Matrix and Limits](docs/SECURITY_ASSURANCE.md).

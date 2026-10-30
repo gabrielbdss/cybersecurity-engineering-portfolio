@@ -1,5 +1,3 @@
-# PREPARED, NOT ACTIVE: move to .github/workflows only after Dependency graph is enabled.
-# Settings -> Security -> Code security -> Dependency graph.
 name: Security - Dependency Review
 
 on:
