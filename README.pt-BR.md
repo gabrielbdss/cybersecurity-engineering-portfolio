@@ -92,7 +92,7 @@ O [Lab 04](labs/04-devsecops-merge-gate/README.md) contém código executável, 
 
 ## Controles automatizados de segurança
 
-O portfólio público conta agora com **CodeQL Python**, **Dependency Review nas PRs**, **Publication Gate** e **resumo semanal somente leitura**, além dos controles existentes de Gitleaks, testes e validação de links. O Publication Gate também foi integrado ao job de CI utilizado na governança de merge.
+O portfólio utiliza **CodeQL Default Setup já habilitado no GitHub**, novo **Publication Gate** e **resumo semanal somente leitura**, além de Gitleaks, testes e links. O **Dependency Review está preparado, mas ainda não está ativo**, pois o *Dependency graph* precisa ser habilitado nas configurações. O Publication Gate também foi integrado ao job de CI usado na governança de merge.
 
 [Visão técnica dos workflows e suas limitações](docs/SECURITY_ASSURANCE.md) · [Execuções GitHub Actions](https://github.com/gabrielbdss/cybersecurity-engineering-portfolio/actions)
 
