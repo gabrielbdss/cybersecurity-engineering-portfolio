@@ -1,0 +1,65 @@
+name: Operation Cymbal - post-event disclosure review
+
+on:
+  schedule:
+    # Monday, November 2, 2026, 09:17 America/Sao_Paulo (12:17 UTC).
+    # UTC date guard below makes this an intentional one-time reminder.
+    - cron: "17 12 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  remind:
+    name: Create a single post-event review issue
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check review window
+        id: review
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+          today="$(date -u +%Y-%m-%d)"
+          if [[ "$EVENT_NAME" == "workflow_dispatch" || "$today" == "2026-11-02" ]]; then
+            echo "create=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "create=false" >> "$GITHUB_OUTPUT"
+            echo "One-time review date is not today. Skipping."
+          fi
+
+      - name: Create generic review issue if missing
+        if: steps.review.outputs.create == 'true'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          title="Operation Cymbal: review disclosure status (manual approval)"
+          matches="$(gh issue list --state all --limit 200 --json title --jq '.[] | select(.title == "Operation Cymbal: review disclosure status (manual approval)") | .title')"
+          if [[ -n "$matches" ]]; then
+            echo "Review issue already exists. Not creating a duplicate."
+            exit 0
+          fi
+
+          cat > "$RUNNER_TEMP/operation-cymbal-review.md" <<'EOF'
+          ## Post-event disclosure review (no automatic publication)
+
+          This is a public, generic reminder only. **Do not paste flags, answers, IOC lists, screenshots with solutions or the private forensic PDF into this issue.**
+
+          - [ ] Check the event and HTB rules for write-ups and third-party material.
+          - [ ] Verify whether organizer permission is required and has been granted.
+          - [ ] Confirm any published ranking and prize eligibility separately from 18/18 completion.
+          - [ ] Review [case study disclosure gate](case-studies/08-operation-cymbal-cold-room/DISCLOSURE.md).
+          - [ ] Keep the private investigation report outside the public repository.
+          - [ ] If a further public update is allowed, prepare it through a separate reviewed PR; otherwise retain HOLD.
+
+          This workflow does not publish material, change repository visibility or merge changes.
+          EOF
+
+          gh issue create --title "$title" --body-file "$RUNNER_TEMP/operation-cymbal-review.md"
