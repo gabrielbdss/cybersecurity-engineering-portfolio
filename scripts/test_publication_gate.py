@@ -41,7 +41,8 @@ class PublicationGateTests(unittest.TestCase):
         self.assertEqual(inspect(self.root)[0][1], "restricted-file-type")
 
     def test_private_key_delimiter_blocked(self):
-        header = "-----BEGIN " + "PRIVATE KEY-----"\n        self.write("notes.txt", header + "\\nplaceholder\\n")
+        header = "-----BEGIN " + "PRIVATE KEY-----"
+        self.write("notes.txt", header + "\nplaceholder\n")
         self.assertEqual(inspect(self.root)[0][1], "private-key-block")
 
     def test_git_dir_skipped(self):
