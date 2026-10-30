@@ -1,0 +1,24 @@
+name: Security - Weekly Assurance Summary
+
+on:
+  schedule:
+    # Monday 10:23 in Sao Paulo (13:23 UTC); schedules can be delayed.
+    - cron: "23 13 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: read
+
+jobs:
+  report:
+    name: Read-only weekly security snapshot
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4 pinned
+      - name: Summarize visible GitHub security alerts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/weekly_security_report.py >> "$GITHUB_STEP_SUMMARY"

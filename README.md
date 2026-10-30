@@ -166,6 +166,12 @@ Dependency presence, advisory applicability, reachability reasoning and remediat
 | [04 · DevSecOps Merge Gate](labs/04-devsecops-merge-gate/README.md) | deterministic fail-closed CI logic | runnable Python evaluator, fixtures and regression tests |
 | [05 · Dependency Triage](labs/05-dependency-triage/README.md) | vulnerability reconciliation | scanner, dependency-path and reachability evidence |
 
+## Security assurance workflows
+
+This public portfolio uses **GitHub-managed CodeQL Default Setup** (already active), a new **Publication Gate**, and a **read-only weekly security summary**, alongside Gitleaks, link validation and regression CI. **Dependency Review is prepared but not active** until the GitHub Dependency graph is enabled. The publication check is also embedded in the existing merge-gate validation job.
+
+[Review controls, limits, and validation evidence](docs/SECURITY_ASSURANCE.md) · [Actions](https://github.com/gabrielbdss/cybersecurity-engineering-portfolio/actions) · [Publication policy](SECURITY.md)
+
 ## Core engineering principles
 
 - **Evidence before mutation.**

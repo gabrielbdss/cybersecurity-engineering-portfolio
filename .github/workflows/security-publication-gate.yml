@@ -1,0 +1,24 @@
+name: Security - Publication Gate
+
+on:
+  pull_request:
+    branches: ["main"]
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  disclosure:
+    name: Validate publication guard and negative tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4 pinned
+      - name: Run negative and positive unit tests
+        run: python3 -m unittest discover -s scripts -p 'test_publication_gate.py' -v
+      - name: Scan repository without printing matched secrets
+        run: python3 scripts/publication_gate.py
