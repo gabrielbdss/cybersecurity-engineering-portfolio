@@ -168,7 +168,7 @@ Dependency presence, advisory applicability, reachability reasoning and remediat
 
 ## Security assurance workflows
 
-This public portfolio now runs **Python CodeQL**, **PR Dependency Review**, **Publication Gate** and a **read-only weekly security summary**, in addition to the existing Gitleaks, link validation and regression CI. The publication check is also embedded in the existing merge-gate validation job.
+This public portfolio uses **GitHub-managed CodeQL Default Setup** (already active), a new **Publication Gate**, and a **read-only weekly security summary**, alongside Gitleaks, link validation and regression CI. **Dependency Review is prepared but not active** until the GitHub Dependency graph is enabled. The publication check is also embedded in the existing merge-gate validation job.
 
 [Review controls, limits, and validation evidence](docs/SECURITY_ASSURANCE.md) · [Actions](https://github.com/gabrielbdss/cybersecurity-engineering-portfolio/actions) · [Publication policy](SECURITY.md)
 
